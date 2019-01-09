@@ -17,7 +17,7 @@ rbenv install $(rbenv install -l | grep -v - | tail -1)
 curl https://sh.rustup.rs -sSf | sh
 
 echo "Linking your shell config files..."
-ln -sfn Brewfile ~/Brewfile
+ln -sfn $(pwd)/Brewfile ~/Brewfile
 
 echo "Syncing your application preference..."
 # spacemacs
