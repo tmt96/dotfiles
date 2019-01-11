@@ -12,9 +12,15 @@ fi;
 echo "Installing your apps..."
 brew bundle
 # Ruby
-rbenv install $(rbenv install -l | grep -v - | tail -1)
+rbenv init
+LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
+rbenv version | read CUR_VER _
+if [ "$LATEST_VERSION" == "$CUR_VER" ]; then
+    rbenv install $LATEST_VERSION -N
+    rbenv global $LATEST_VERSION
+fi;
 # Rust
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 echo "Linking your shell config files..."
 ln -sfn $(pwd)/Brewfile ~/Brewfile
@@ -29,4 +35,4 @@ if ! grep -q "$(which zsh)" /etc/shells; then
 fi
 chsh -s $(which zsh)
 
-echo "Remember to "
+echo "Remember to logout to change login shell"
