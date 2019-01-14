@@ -14,7 +14,7 @@ if [ "$LATEST_VERSION" == "$CUR_VER" ]; then
     rbenv install $LATEST_VERSION -N
     rbenv global $LATEST_VERSION
 fi;
-gem install rubocop
+gem install rubocop solargraph
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
