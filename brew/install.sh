@@ -7,8 +7,8 @@ if ! [ -x "$(command -v brew)" ]; then
 fi;
 
 echo "Installing your apps..."
-brew bundle
+echo "$(dirname ${BASH_SOURCE[0]})/Brewfile"
+brew bundle --file="$(dirname ${BASH_SOURCE[0]})/Brewfile"
 
 echo "Linking your shell config files..."
-ln -sfn $(pwd)/Brewfile ~/Brewfile
-
+ln -sfn "$(dirname ${BASH_SOURCE[0]})/Brewfile" ~/Brewfile

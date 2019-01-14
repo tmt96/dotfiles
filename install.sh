@@ -19,6 +19,7 @@ gem install rubocop
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 rustup default stable
+rustup update stable
 rustup component add rls rust-analysis rust-src clippy
 
 echo "Syncing your application preference..."
