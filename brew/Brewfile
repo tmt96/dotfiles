@@ -1,0 +1,132 @@
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/science"
+tap "homebrew/services"
+tap "mistertea/et"
+cask "java"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Cross-platform make
+brew "cmake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl", args: ["with-gssapi", "with-openssl"]
+# Distributed revision control system
+brew "git"
+# SSL/TLS cryptography library
+brew "openssl"
+# Command-line interface for SQLite
+brew "sqlite"
+# Alternative to top/htop
+brew "glances"
+# Command-driven, interactive function plotting
+brew "gnuplot"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Mac App Store command-line interface
+brew "mas"
+# Java-based project management
+brew "maven"
+# Scalable distributed version control system
+brew "mercurial"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+# Remote terminal application
+brew "mosh"
+# Platform built on V8 to build network applications
+brew "node"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Object-relational database system
+brew "postgresql", restart_service: true
+# Install various Ruby versions and implementations
+brew "ruby-build"
+# Ruby version manager
+brew "rbenv"
+# User interface to the TELNET protocol (built from macOS Sierra sources)
+brew "telnet"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Everything you need to get started with Heroku
+brew "heroku/brew/heroku"
+# Remote terminal with IP roaming
+brew "mistertea/et/et"
+cask "adobe-acrobat-reader"
+cask "alfred"
+cask "anaconda"
+cask "android-studio"
+cask "dash"
+cask "dotnet-sdk"
+cask "emacs"
+cask "firefox"
+cask "flash-player"
+cask "font-anonymice-powerline"
+cask "font-consolas-for-powerline"
+cask "font-dejavu-sans-mono-for-powerline"
+cask "font-droid-sans-mono-for-powerline"
+cask "font-fira-mono-for-powerline"
+cask "font-inconsolata-dz-for-powerline"
+cask "font-inconsolata-for-powerline"
+cask "font-inconsolata-g-for-powerline"
+cask "font-liberation-mono-for-powerline"
+cask "font-menlo-for-powerline"
+cask "font-meslo-for-powerline"
+cask "font-monofur-for-powerline"
+cask "font-noto-mono-for-powerline"
+cask "font-roboto-mono-for-powerline"
+cask "font-source-code-pro-for-powerline"
+cask "font-ubuntu-mono-derivative-powerline"
+cask "free-download-manager"
+cask "google-backup-and-sync"
+cask "google-chrome"
+cask "iina"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "karabiner-elements"
+cask "keka"
+cask "krita"
+cask "mactex"
+cask "malwarebytes"
+cask "mono-mdk"
+cask "powershell"
+cask "scroll-reverser"
+cask "skype"
+cask "soda-player"
+cask "spectacle"
+cask "spotify"
+cask "sublime-text"
+cask "virtualbox"
+cask "virtualbox-extension-pack"
+cask "visual-studio"
+cask "visual-studio-code"
+mas "Amphetamine", id: 937984704
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "CopyClip", id: 595191960
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Irvue", id: 1039633667
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "OneDrive", id: 823766827
+mas "Pages", id: 409201541
+mas "Paint S", id: 736473980
+mas "Spark", id: 1176895641
+mas "The Unarchiver", id: 425424353
+mas "VOX", id: 461369673
+mas "Wunderlist", id: 410628904
+mas "Xcode", id: 497799835

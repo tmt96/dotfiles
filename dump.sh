@@ -3,4 +3,4 @@
 echo "We will copy your current config to the dotfiles repository"
 
 echo "Dumping app list"
-brew bundle dump -f --describe
+brew bundle dump -f --describe --file=./brew/Brewfile
