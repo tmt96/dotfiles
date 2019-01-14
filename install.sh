@@ -3,7 +3,8 @@
 echo "Welcome to tmt's dotfiles. The process requires your root account password to proceed."
 sudo -v
 
-source ./brew/install.sh
+. ./brew/install.sh
+. ./zsh/install.sh
 
 # Ruby
 rbenv init
