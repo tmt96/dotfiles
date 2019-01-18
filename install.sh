@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-echo "Welcome to tmt's dotfiles. The process requires your root account password to proceed."
+echo "Welcome to tmt's dotfiles."
+echo "The process requires your root account password to proceed."
 sudo -v
 
 . ./brew/install.sh
 . ./zsh/install.sh
+. ./emacs/install.sh
 
 # Ruby
 rbenv init
@@ -23,9 +25,6 @@ rustup default stable
 rustup update stable
 rustup component add rls rust-analysis rust-src clippy
 
-echo "Syncing your application preference..."
-# spacemacs
-# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 echo "Switching you over to zsh"
 if ! grep -q "$(which zsh)" /etc/shells; then
