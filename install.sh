@@ -6,6 +6,7 @@ sudo -v
 
 . ./brew/install.sh
 . ./zsh/install.sh
+. ./bash/install.sh
 . ./emacs/install.sh
 
 # Ruby

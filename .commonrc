@@ -9,9 +9,10 @@ alias ls='ls -GFh'
 export TERM=xterm-256color
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/TeX/texbin:"$PATH"
-export PATH="$PATH":/usr/local/anaconda3/bin:~/.dotnet/tool
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
 source $HOME/.cargo/env
+. /usr/local/anaconda3/etc/profile.d/conda.sh
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
