@@ -12,3 +12,16 @@ cat <<-EOF >> ~/.bash_profile
 source $dir_name/../.commonrc
 EOF
 fi
+
+echo "Adding iTerm integration..."
+curl -L https://iterm2.com/shell_integration/bash \
+-o ~/.iterm2_shell_integration.bash
+if ! grep iterm2_shell_integration ~/.bash_profile > /dev/null 2>&1; then
+cat <<-EOF >> ~/.bash_profile
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+EOF
+fi
+
+source ~/.bash_profile
+echo "Done configuring bash!!"
+echo

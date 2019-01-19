@@ -1,5 +1,5 @@
-alias em='emacsclient -c '
-alias et='emacsclient -t'
+alias em='  emacsclient -c -a= $*'
+alias et='emacsclient -t -a= $*'
 export ALTERNATE_EDITOR=""
 export EDITOR="et"         # $EDITOR opens in terminal
 export VISUAL="em"         # $VISUAL opens in GUI mode
@@ -12,7 +12,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/lo
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 source $HOME/.cargo/env
-. /usr/local/anaconda3/etc/profile.d/conda.sh
+source /usr/local/anaconda3/etc/profile.d/conda.sh
+eval "$(rbenv init -)"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
