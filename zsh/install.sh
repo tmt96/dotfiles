@@ -1,10 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo
 echo "Syncing your zsh prezto config..."
 
-dir_name=`dirname "${BASH_SOURCE[0]}"`
-dir_name=`( cd "$dir_name" && pwd )`
+dir_name=${0:a:h}
 
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
     echo "You don't have prezto cloned. Cloning prezto..."
@@ -19,9 +18,9 @@ if ! grep commonrc ~/.zshenv > /dev/null 2>&1; then
 fi
 
 # z-files
-for file in "$dir_name/z*"; do
+for file in $dir_name/z*; do
     filename="$(basename $file)"
-    echo "Configuring .${filename}"
+    echo "Configuring .$filename"
     test -f ~/."$filename" || touch ~/."$filename"
     if ! grep "$file" ~/."$filename" > /dev/null 2>&1; then
         echo "source $file" >>  ~/."$filename"

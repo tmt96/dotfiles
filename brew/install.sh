@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo
 echo "Syncing apps through Homebrew..."
@@ -9,12 +9,11 @@ if ! [ -x "$(command -v brew)" ]; then
 fi;
 
 echo "Installing your apps using Brewfile..."
-brew bundle --file="$(dirname ${BASH_SOURCE[0]})/Brewfile"
+dir_name=${0:a:h}
+brew bundle --file=$dir_name/Brewfile
 
 echo "Linking your shell config files..."
-dir_name=`dirname "${BASH_SOURCE[0]}"`
-dir_name=`( cd "$dir_name" && pwd )`
-ln -sfn "$dir_name/Brewfile" ~/Brewfile
+ln -sfn $dir_name/Brewfile ~/Brewfile
 
 echo "Done installing apps from Homebrew!!"
 echo

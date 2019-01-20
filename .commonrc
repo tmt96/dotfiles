@@ -13,7 +13,9 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 source $HOME/.cargo/env
 source /usr/local/anaconda3/etc/profile.d/conda.sh
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+    eval "$(rbenv init - --no-rehash)"
+fi
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).

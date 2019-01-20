@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo "Welcome to tmt's dotfiles."
 echo "The process requires your root account password to proceed."
@@ -13,7 +13,7 @@ source ./emacs/install.sh
 rbenv init
 LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
 rbenv version | read CUR_VER _
-if [ "$LATEST_VERSION" == "$CUR_VER" ]; then
+if [ "$LATEST_VERSION" = "$CUR_VER" ]; then
     rbenv install $LATEST_VERSION -N
     rbenv global $LATEST_VERSION
 fi;
@@ -28,9 +28,10 @@ rustup component add rls rust-analysis rust-src clippy
 
 
 echo "Switching you over to zsh"
-if ! grep -q "$(which zsh)" /etc/shells; then
-    sudo sh -c "echo $(which zsh) >> /etc/shells"
+zsh_path=/usr/local/bin/zsh
+if ! grep -q $zsh_path /etc/shells; then
+    sudo sh -c "echo $zsh_path >> /etc/shells"
 fi
-chsh -s $(which zsh)
+sudo dscl . -change /Users/$USER UserShell $SHELL $zsh_path > /dev/null 2>&1
 
 echo "Remember to logout to change login shell"
