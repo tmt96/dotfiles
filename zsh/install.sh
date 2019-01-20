@@ -15,9 +15,7 @@ echo "Configuring .zshenv"
 # commonrc
 test -f ~/.zshenv || touch ~/.zshenv
 if ! grep commonrc ~/.zshenv > /dev/null 2>&1; then
-cat <<-EOF >> ~/.zshenv
-source $dir_name/../.commonrc
-EOF
+    echo "source $dir_name/../.commonrc" >> ~/.zshenv
 fi
 
 # z-files
@@ -26,9 +24,7 @@ for file in "$dir_name/z*"; do
     echo "Configuring .${filename}"
     test -f ~/."$filename" || touch ~/."$filename"
     if ! grep "$file" ~/."$filename" > /dev/null 2>&1; then
-    cat <<-EOF >> ~/."$filename"
-source $file
-EOF
+        echo "source $file" >>  ~/."$filename"
     fi
 done
 
@@ -37,9 +33,7 @@ curl -L https://iterm2.com/shell_integration/zsh \
 -o ~/.iterm2_shell_integration.zsh
 test -f ~/.zshrc || touch ~/.zshrc
 if ! grep iterm2_shell_integration ~/.zshrc > /dev/null 2>&1; then
-cat <<-EOF >> ~/.zshrc
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-EOF
+    echo "test -e \"${HOME}/.iterm2_shell_integration.zsh\" && source \"${HOME}/.iterm2_shell_integration.zsh\"" ~/.zshrc
 fi
 
 echo "Done configuring zsh!!"
