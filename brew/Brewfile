@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/science"
 tap "homebrew/services"
 tap "mistertea/et"
 cask "java"
@@ -21,6 +22,8 @@ brew "git"
 brew "openssl"
 # Command-line interface for SQLite
 brew "sqlite"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Alternative to top/htop
 brew "glances"
 # Command-driven, interactive function plotting
@@ -33,10 +36,10 @@ brew "imagemagick"
 brew "mas"
 # Java-based project management
 brew "maven"
+# Interpreted, interactive, object-oriented programming language
+brew "python@2"
 # Scalable distributed version control system
 brew "mercurial"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Remote terminal application
 brew "mosh"
 # Platform built on V8 to build network applications
@@ -44,7 +47,7 @@ brew "node"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Object-relational database system
-brew "postgresql", restart_service: true
+brew "postgresql"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager

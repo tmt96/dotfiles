@@ -7,6 +7,7 @@ sudo -v
 source ./brew/install.sh
 source ./bash/install.sh
 source ./zsh/install.sh
+source ./vscode/install.sh
 source ./emacs/install.sh
 source ./iterm2/install.sh
 
