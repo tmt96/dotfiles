@@ -10,6 +10,7 @@ fi;
 
 echo "Installing your apps using Brewfile..."
 dir_name=${0:a:h}
+brew update
 brew bundle --file=$dir_name/Brewfile
 
 echo "Linking your shell config files..."

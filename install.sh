@@ -8,6 +8,7 @@ source ./brew/install.sh
 source ./bash/install.sh
 source ./zsh/install.sh
 source ./emacs/install.sh
+source ./iterm2/install.sh
 
 # Ruby
 rbenv init
