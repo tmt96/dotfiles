@@ -12,27 +12,27 @@ fi
 
 echo "Configuring .zshenv"
 # commonrc
-test -f ~/.zshenv || touch ~/.zshenv
-if ! grep commonrc ~/.zshenv > /dev/null 2>&1; then
-    echo "source $dir_name/../.commonrc" >> ~/.zshenv
+test -f ${HOME}/.zshenv || touch ${HOME}/.zshenv
+if ! grep commonrc ${HOME}/.zshenv > /dev/null 2>&1; then
+    echo "source $dir_name/../.commonrc" >> ${HOME}/.zshenv
 fi
 
 # z-files
 for file in $dir_name/z*; do
     filename="$(basename $file)"
     echo "Configuring .$filename"
-    test -f ~/."$filename" || touch ~/."$filename"
-    if ! grep "$file" ~/."$filename" > /dev/null 2>&1; then
-        echo "source $file" >>  ~/."$filename"
+    test -f ${HOME}/."$filename" || touch ${HOME}/."$filename"
+    if ! grep "$file" ${HOME}/."$filename" > /dev/null 2>&1; then
+        echo "source $file" >>  ${HOME}/."$filename"
     fi
 done
 
 echo "Adding iTerm integration..."
 curl -L https://iterm2.com/shell_integration/zsh \
--o ~/.iterm2_shell_integration.zsh
-test -f ~/.zshrc || touch ~/.zshrc
-if ! grep iterm2_shell_integration ~/.zshrc > /dev/null 2>&1; then
-    echo "test -e \"${HOME}/.iterm2_shell_integration.zsh\" && source \"${HOME}/.iterm2_shell_integration.zsh\"" ~/.zshrc
+-o ${HOME}/.iterm2_shell_integration.zsh
+test -f ${HOME}/.zshrc || touch ${HOME}/.zshrc
+if ! grep iterm2_shell_integration ${HOME}/.zshrc > /dev/null 2>&1; then
+    echo "test -e \"${HOME}/.iterm2_shell_integration.zsh\" && source \"${HOME}/.iterm2_shell_integration.zsh\"" ${HOME}/.zshrc
 fi
 
 echo "Done configuring zsh!!"

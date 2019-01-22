@@ -14,7 +14,7 @@ brew update
 brew bundle --file=$dir_name/Brewfile
 
 echo "Linking your shell config files..."
-ln -sfn $dir_name/Brewfile ~/Brewfile
+ln -sfn $dir_name/Brewfile ${HOME}/Brewfile
 
 echo "Done installing apps from Homebrew!!"
 echo
