@@ -12,7 +12,7 @@ dir_name=${0:a:h}
 ln -sfn $dir_name/.spacemacs ${HOME}/.spacemacs
 
 # TODO: Configure emacs daemon & client
-echo "Configure emacs daemon"
+echo "Configure emacs daemon..."
 ln -sfn $dir_name/emacs.daemon.plist ${HOME}/Library/LaunchAgents/org.gnu.emacs.daemon.plist
 launchctl load ${HOME}/Library/LaunchAgents/org.gnu.emacs.daemon.plist
 

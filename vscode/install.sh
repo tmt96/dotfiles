@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-# echo "Installing your extensions"
-# for line in $(cat "./vscode/extensions"); do
-#     code --install-extension --force $line;
-# done
+echo
+echo "Configuring VSCode..."
+echo "Installing your extensions"
+for line in $(cat "./vscode/extensions"); do
+    code --install-extension --force $line
+done
 
 echo "Configure settings & keybindings"
 dir_name=${0:a:h}
@@ -16,3 +18,6 @@ for file in $dir_name/*.json; do
     fi
     ln -sfn $dir_name/$filename $dest_dir/$filename
 done
+
+echo "Done configuring VSCode!!"
+echo
