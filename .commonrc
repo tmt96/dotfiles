@@ -1,4 +1,4 @@
-alias em='  emacsclient -c -a= $*'
+alias em='emacsclient -c -a= $*'
 alias et='emacsclient -t -a= $*'
 export ALTERNATE_EDITOR=""
 export EDITOR="et"         # $EDITOR opens in terminal

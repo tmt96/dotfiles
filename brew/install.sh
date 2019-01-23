@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+dir_name=${0:a:h}
+source $dir_name/../function.sh
+
 echo
 echo "Syncing apps through Homebrew..."
 if ! [ -x "$(command -v brew)" ]; then
@@ -9,12 +12,12 @@ if ! [ -x "$(command -v brew)" ]; then
 fi;
 
 echo "Installing your apps using Brewfile..."
-dir_name=${0:a:h}
+sudo chown -R $(whoami) /usr/local/lib /usr/local/sbin
 brew update
 brew bundle --file=$dir_name/Brewfile
 
 echo "Linking your shell config files..."
-ln -sfn $dir_name/Brewfile ${HOME}/Brewfile
+backup_and_link $dir_name/Brewfile ${HOME}/Brewfile
 
 echo "Done installing apps from Homebrew!!"
 echo

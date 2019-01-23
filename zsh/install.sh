@@ -30,10 +30,6 @@ done
 echo "Adding iTerm integration..."
 curl -L https://iterm2.com/shell_integration/zsh \
 -o ${HOME}/.iterm2_shell_integration.zsh
-test -f ${HOME}/.zshrc || touch ${HOME}/.zshrc
-if ! grep iterm2_shell_integration ${HOME}/.zshrc > /dev/null 2>&1; then
-    echo "test -e \"${HOME}/.iterm2_shell_integration.zsh\" && source \"${HOME}/.iterm2_shell_integration.zsh\"" ${HOME}/.zshrc
-fi
 
 echo "Done configuring zsh!!"
 echo
