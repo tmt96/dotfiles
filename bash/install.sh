@@ -8,7 +8,7 @@ echo "Configuring .bash_profile..."
 # commonrc
 test -f ${HOME}/.bash_profile || touch ${HOME}/.bash_profile
 if ! grep commonrc ${HOME}/.bash_profile > /dev/null 2>&1; then
-    echo "source $dir_name/../.commonrc" >> ${HOME}/.bas_profile
+    echo "source $dir_name/../.commonrc" >> ${HOME}/.bash_profile
 fi
 
 echo "Adding iTerm integration..."
