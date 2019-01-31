@@ -16,7 +16,7 @@ rbenv init
 LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
 rbenv version | read CUR_VER _
 if [ "$LATEST_VERSION" = "$CUR_VER" ]; then
-    rbenv install $LATEST_VERSION -N
+    rbenv install $LATEST_VERSION -s
     rbenv global $LATEST_VERSION
 fi;
 gem install rubocop solargraph

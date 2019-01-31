@@ -1,5 +1,5 @@
 alias em='emacsclient -c -a= $*'
-alias et='emacsclient -t -a= $*'
+alias emt='emacsclient -t -a= $*'
 export ALTERNATE_EDITOR=""
 export EDITOR="et"         # $EDITOR opens in terminal
 export VISUAL="em"         # $VISUAL opens in GUI mode
