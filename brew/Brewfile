@@ -4,7 +4,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/science"
 tap "homebrew/services"
 tap "mistertea/et"
 cask "java"
@@ -52,6 +51,7 @@ brew "postgresql"
 brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
+brew "rbenv-default-gems"
 # User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
 # Terminal multiplexer

@@ -8,8 +8,18 @@ echo "Configuring .bash_profile..."
 # commonrc
 test -f ${HOME}/.bash_profile || touch ${HOME}/.bash_profile
 if ! grep commonrc ${HOME}/.bash_profile > /dev/null 2>&1; then
-    echo "source $dir_name/../.commonrc" >> ${HOME}/.bas_profile
+    echo "source $dir_name/.commonrc" >> ${HOME}/.bash_profile
 fi
+
+for file in $dir_name/b*; do
+    filename="$(basename $file)"
+    echo "Configuring .$filename"
+    test -f ${HOME}/."$filename" || touch ${HOME}/."$filename"
+    if ! grep "$file" ${HOME}/."$filename" > /dev/null 2>&1; then
+        echo "source $file" >>  ${HOME}/."$filename"
+    fi
+done
+
 
 echo "Adding iTerm integration..."
 curl -L https://iterm2.com/shell_integration/bash \

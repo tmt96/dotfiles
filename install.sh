@@ -10,18 +10,9 @@ source ./zsh/install.sh
 source ./vscode/install.sh
 source ./emacs/install.sh
 source ./iterm2/install.sh
+source ./ruby/install.sh
 
-# Ruby
-rbenv init
-LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
-rbenv version | read CUR_VER _
-if [ "$LATEST_VERSION" = "$CUR_VER" ]; then
-    rbenv install $LATEST_VERSION -s
-    rbenv global $LATEST_VERSION
-fi;
-gem install rubocop solargraph
-
-# Rust
+# # Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 rustup default stable

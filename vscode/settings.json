@@ -29,10 +29,7 @@
   "java.signatureHelp.enabled": true,
   "java.implementationsCodeLens.enabled": true,
   "java.trace.server": "off",
-  "cSpell.userWords": [
-    "impactful",
-    "scalability"
-  ],
+  "cSpell.userWords": ["impactful", "scalability"],
   "workbench.activityBar.visible": true,
   "rest-client.enableTelemetry": true,
   "explorer.decorations.badges": true,
@@ -110,9 +107,7 @@
   "bracketPairColorizer.showHorizontalScopeLine": false,
   "bracketPairColorizer.showVerticalScopeLine": true,
   "workbench.colorTheme": "One Dark Pro",
-  "python.linting.flake8Args": [
-    "--max-complexity=6"
-  ],
+  "python.linting.flake8Args": ["--max-complexity=6"],
   "editor.find.autoFindInSelection": true,
   "window.zoomLevel": 0,
   "workbench.statusBar.visible": true,
@@ -120,7 +115,7 @@
   "python.formatting.provider": "yapf",
   "terminal.integrated.scrollback": 5000,
   "[latex]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "workbench.iconTheme": "vscode-icons",
   "debug.toolBarLocation": "docked",
@@ -129,14 +124,6 @@
   "sync.removeExtensions": false,
   "sync.syncExtensions": true,
   "python.jediEnabled": false,
-  "todo-tree.defaultHighlight": {
-    "foreground": "green",
-    "type": "none"
-  },
-  "todo-tree.customHighlight": {
-    "TODO": {},
-    "FIXME": {}
-  },
   "FSharp.fsacRuntime": "netcore",
   "latex-workshop.message.update.show": false,
   "gitlens.views.repositories.enabled": true,
@@ -153,5 +140,5 @@
     "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
   ],
   "gitlens.views.repositories.avatars": true,
-  "gitlens.views.search.avatars": true,
+  "gitlens.views.search.avatars": true
 }
