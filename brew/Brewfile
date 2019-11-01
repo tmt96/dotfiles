@@ -6,7 +6,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mistertea/et"
-cask "java"
+tap "nodenv/nodenv"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Cross-platform make
@@ -37,6 +37,8 @@ brew "maven"
 # brew "mercurial"
 # Remote terminal application
 brew "mosh"
+# Manage multiple NodeJS versions
+brew "nodenv"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
@@ -62,6 +64,14 @@ brew "zsh"
 brew "heroku/brew/heroku"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
+# Fix IntelliJ/WebStorm's npm integration under nodenv
+brew "nodenv/nodenv/jetbrains-npm"
+# Auto-installs packages for Node installs
+brew "nodenv/nodenv/nodenv-default-packages"
+# Migrate npm packages from one Node version to another
+brew "nodenv/nodenv/nodenv-npm-migrate"
+# Automatically runs `nodenv rehash`
+brew "nodenv/nodenv/nodenv-package-rehash"
 cask "adobe-acrobat-reader"
 cask "alfred"
 cask "android-studio"

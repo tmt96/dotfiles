@@ -11,6 +11,7 @@ source ./vscode/install.sh
 source ./emacs/install.sh
 source ./iterm2/install.sh
 source ./ruby/install.sh
+source ./node/install.sh
 
 # # Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
