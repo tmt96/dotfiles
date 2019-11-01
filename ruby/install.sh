@@ -9,13 +9,8 @@ backup_and_link $dir_name/default-gems $(rbenv root)/default-gems
 
 LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
 LATEST_VERSION=${LATEST_VERSION// /}
-rbenv version | read CUR_VER _
-CUR_VER=${CUR_VER// /}
-
-if [ "$LATEST_VERSION" != "$CUR_VER" ]; then
-    rbenv install $LATEST_VERSION -s
-    rbenv global $LATEST_VERSION
-fi;
+rbenv install $LATEST_VERSION -s
+rbenv global $LATEST_VERSION
 
 echo "Finished installing ruby!"
 echo
