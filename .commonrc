@@ -11,7 +11,7 @@ alias casko='cask outdated --greedy'
 alias casku='cask upgrade'
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emt"         # $EDITOR opens in terminal
+export EDITOR="emt"        # $EDITOR opens in terminal
 export VISUAL="em"         # $VISUAL opens in GUI mode
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

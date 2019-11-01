@@ -7,7 +7,7 @@ echo
 echo "Install ruby using rbenv..."
 backup_and_link $dir_name/default-gems $(rbenv root)/default-gems
 
-LATEST_VERSION=$(rbenv install -l | grep "^[[:space:]]*[0-9]\{1,\}.[0-9]\{1,\}.[0-9]\{1,\}$"| tail -1)
+LATEST_VERSION=$(rbenv install -l | egrep "^[[:space:]]*[0-9]+.[0-9]+.[0-9]+$"| tail -1)
 LATEST_VERSION=${LATEST_VERSION// /}
 rbenv install $LATEST_VERSION -s
 rbenv global $LATEST_VERSION
