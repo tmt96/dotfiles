@@ -12,14 +12,7 @@ source ./emacs/install.sh
 source ./iterm2/install.sh
 source ./ruby/install.sh
 source ./node/install.sh
-
-# # Rust
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
-rustup default stable
-rustup update stable
-rustup component add rls rust-analysis rust-src clippy
-
+source ./rust/install.sh
 
 echo "Switching you over to zsh"
 zsh_path=/usr/local/bin/zsh
