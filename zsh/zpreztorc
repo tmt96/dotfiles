@@ -23,10 +23,10 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'emacs'\
-  'homebrew' \
   'osx' \
   'tmux'\
   'git' \
+  'node' \
   'ruby'\
   'python'\
   'syntax-highlighting' \
