@@ -2,7 +2,7 @@
 
 function backup {
     if [ -f $1 ]; then
-        mv $1 $1.backup
+        yes | mv $1 $1.backup
     fi
 }
 
