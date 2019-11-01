@@ -21,8 +21,6 @@ brew "git"
 brew "openssl"
 # Command-line interface for SQLite
 brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Alternative to top/htop
 brew "glances"
 # Command-driven, interactive function plotting
@@ -35,20 +33,16 @@ brew "imagemagick"
 brew "mas"
 # Java-based project management
 brew "maven"
-# Interpreted, interactive, object-oriented programming language
-brew "python@2"
 # Scalable distributed version control system
-brew "mercurial"
+# brew "mercurial"
 # Remote terminal application
 brew "mosh"
-# Platform built on V8 to build network applications
-brew "node"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Object-relational database system
 brew "postgresql"
-# Install various Ruby versions and implementations
-brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
 brew "rbenv-default-gems"
@@ -70,10 +64,10 @@ brew "heroku/brew/heroku"
 brew "mistertea/et/et"
 cask "adobe-acrobat-reader"
 cask "alfred"
-cask "anaconda"
 cask "android-studio"
 cask "dash"
 cask "dotnet-sdk"
+cask "dozer"
 cask "emacs"
 cask "firefox"
 cask "flash-player"
@@ -98,18 +92,22 @@ cask "google-backup-and-sync"
 cask "google-chrome"
 cask "iina"
 cask "iterm2"
+cask "java"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keka"
 cask "krita"
 cask "mactex"
 cask "malwarebytes"
+cask "mathpix-snipping-tool"
 cask "mono-mdk"
+cask "miniconda"
+cask "ngrok"
+cask "pomodone"
 cask "powershell"
+cask "rectangle"
 cask "scroll-reverser"
 cask "skype"
-cask "soda-player"
-cask "spectacle"
 cask "spotify"
 cask "sublime-text"
 cask "virtualbox"
@@ -117,7 +115,6 @@ cask "virtualbox-extension-pack"
 cask "visual-studio"
 cask "visual-studio-code"
 mas "Amphetamine", id: 937984704
-mas "CopyClip", id: 595191960
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Irvue", id: 1039633667

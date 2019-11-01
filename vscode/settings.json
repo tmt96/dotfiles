@@ -206,7 +206,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   /*************************************
-   * language-specific settings
+   * Language-specific settings
    **************************************/
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
