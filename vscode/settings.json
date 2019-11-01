@@ -1,6 +1,65 @@
 // Place your settings in this file to overwrite the default settings
 {
+  /**********************************************
+   * Main editor settings
+   ***********************************************/
+  "breadcrumbs.enabled": true,
+  "debug.toolBarLocation": "docked",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.dragAndDrop": false,
+  "editor.find.autoFindInSelection": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 250,
+  "editor.suggestSelection": "first",
+  "explorer.openEditors.visible": 1,
+  "editor.fontSize": 14,
+  "editor.insertSpaces": true,
+  "editor.lineHeight": 30,
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "on",
   "editor.wordWrap": "bounded",
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off",
+  "files.associations": {
+    "*.erb": "erb"
+  },
+  "search.showLineNumbers": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.scrollback": 5000,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": true,
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.colorCustomizations": {
+    "[One Dark Pro]": {
+      "statusBar.foreground": "#EFEFEF",
+      "statusBarItem.hoverBackground": "#3F3F55",
+      "activityBar.foreground": "#EFEFEF"
+    }
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true,
+
+  /**********************************************
+   * Extensions Settings
+   ***********************************************/
+  "bracketPairColorizer.showHorizontalScopeLine": false,
+  "bracketPairColorizer.showVerticalScopeLine": true,
+  "C_Cpp.clang_format_style": "Google",
+  "csharp.referencesCodeLens.enabled": true,
+  "csharp.suppressHiddenDiagnostics": false,
   "cSpell.enabledLanguageIds": [
     "json",
     "latex",
@@ -9,38 +68,13 @@
     "text",
     "yml"
   ],
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "vsicons.dontShowNewVersionMessage": true,
-  "sync.autoDownload": false,
-  "sync.autoUpload": false,
-  "sync.forceDownload": false,
-  "sync.quietSync": true,
-  "editor.minimap.enabled": true,
-  "sync.askGistName": false,
-  "workbench.commandPalette.preserveInput": true,
-  "terminal.external.osxExec": "iTerm.app",
-  "workbench.startupEditor": "newUntitledFile",
-  "files.autoSave": "off",
-  "hg.pushPullScope": "current",
-  "hg.useBookmarks": true,
-  "latex-workshop.chktex.enabled": true,
-  "extensions.ignoreRecommendations": true,
-  "java.referencesCodeLens.enabled": true,
-  "java.signatureHelp.enabled": true,
-  "java.implementationsCodeLens.enabled": true,
-  "java.trace.server": "off",
   "cSpell.userWords": ["impactful", "scalability"],
-  "workbench.activityBar.visible": true,
-  "rest-client.enableTelemetry": true,
-  "explorer.decorations.badges": true,
-  "explorer.decorations.colors": false,
-  "csharp.referencesCodeLens.enabled": true,
-  "markdownlint.config": {
-    "MD013": false,
-    "MD033": false
+  "emmet.includeLanguages": {
+    "erb": "html"
   },
-  "editor.dragAndDrop": false,
-  "editor.formatOnPaste": true,
+  "FSharp.enableTreeView": true,
+  "FSharp.fsacRuntime": "netcore",
+  "git.autofetch": true,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -53,92 +87,141 @@
     "suppressUpdateNotice": true,
     "suppressWelcomeNotice": false
   },
-  "editor.insertSpaces": true,
-  "git.autofetch": true,
-  "workbench.editor.tabSizing": "shrink",
-  "rust.all_features": true,
-  "[rust]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
-  },
-  "editor.lineHeight": 30,
-  "terminal.integrated.lineHeight": 1.5,
-  "C_Cpp.clang_format_style": "Google",
-  "powershell.integratedConsole.showOnStartup": false,
-  "rust.build_on_save": true,
-  "rust.goto_def_racer_fallback": true,
-  "rust.unstable_features": true,
-  "rust.cfg_test": true,
-  "rust.wait_to_build": 100,
-  "csharp.suppressHiddenDiagnostics": false,
-  "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.keymap": "chorded",
-  "editor.formatOnSave": true,
-  "window.titleBarStyle": "custom",
-  "emmet.includeLanguages": {
-    "erb": "html"
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.views.compare.avatars": true,
+  "gitlens.views.compare.location": "scm",
+  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.repositories.avatars": true,
+  "gitlens.views.repositories.enabled": true,
+  "gitlens.views.repositories.files.layout": "auto",
+  "gitlens.views.repositories.location": "scm",
+  "gitlens.views.search.avatars": true,
+  "gitlens.views.search.location": "scm",
+  "hg.pushPullScope": "current",
+  "hg.useBookmarks": true,
+  "java.implementationsCodeLens.enabled": true,
+  "java.referencesCodeLens.enabled": true,
+  "java.signatureHelp.enabled": true,
+  "java.trace.server": "off",
+  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.message.update.show": false,
+  "latex-workshop.view.pdf.hand": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "markdownlint.config": {
+    "MD013": false,
+    "MD033": false,
+    "MD025": {
+      "front_matter_title": ""
+    }
   },
-  "files.associations": {
-    "*.erb": "erb"
-  },
+  "markdownlint.customRules": [
+    "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
+  ],
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "powershell.startAutomatically": false,
+  "powershell.integratedConsole.showOnStartup": false,
+  "python.condaPath": "usr/local/Caskroom/miniconda/base/condabin/conda",
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.linting.flake8Args": ["--max-complexity=6"],
+  "rest-client.enableTelemetry": true,
+  "rust.all_targets": true,
+  "ruby.format": false,
   "ruby.lint": {
     "rubocop": {
       "lint": true,
       "rails": true
     }
   },
-  "terminal.integrated.shell.osx": "zsh",
-  "terminal.integrated.fontSize": 12,
-  "workbench.editor.showTabs": false,
+  "rust.all_features": true,
+  "rust.build_on_save": true,
+  "rust.cfg_test": true,
+  "rust.goto_def_racer_fallback": true,
+  "rust.unstable_features": true,
+  "rust.wait_to_build": 100,
   "solargraph.diagnostics": true,
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.view.pdf.hand": true,
-  "explorer.openEditors.visible": 1,
-  "rust.all_targets": true,
-  "workbench.colorCustomizations": {
-    "[One Dark Pro]": {
-      "statusBar.foreground": "#EFEFEF",
-      "statusBarItem.hoverBackground": "#3F3F55",
-      "activityBar.foreground": "#EFEFEF"
-    }
+  "sync.askGistName": false,
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.forceDownload": false,
+  "sync.quietSync": true,
+  "sync.removeExtensions": false,
+  "sync.syncExtensions": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  /*************************************
+   * language-specific settings
+   **************************************/
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "ruby.format": false,
-  "editor.formatOnSaveTimeout": 250,
-  "bracketPairColorizer.showHorizontalScopeLine": false,
-  "bracketPairColorizer.showVerticalScopeLine": true,
-  "workbench.colorTheme": "One Dark Pro",
-  "python.linting.flake8Args": ["--max-complexity=6"],
-  "editor.find.autoFindInSelection": true,
-  "window.zoomLevel": 0,
-  "workbench.statusBar.visible": true,
-  "editor.fontSize": 14,
-  "python.formatting.provider": "yapf",
-  "terminal.integrated.scrollback": 5000,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[latex]": {
     "editor.formatOnSave": false
   },
-  "workbench.iconTheme": "vscode-icons",
-  "debug.toolBarLocation": "docked",
-  "FSharp.enableTreeView": true,
-  "breadcrumbs.enabled": true,
-  "sync.removeExtensions": false,
-  "sync.syncExtensions": true,
-  "python.jediEnabled": false,
-  "FSharp.fsacRuntime": "netcore",
-  "latex-workshop.message.update.show": false,
-  "gitlens.views.repositories.enabled": true,
-  "gitlens.views.repositories.files.layout": "auto",
-  "gitlens.views.repositories.location": "scm",
-  "gitlens.views.fileHistory.location": "scm",
-  "gitlens.views.lineHistory.location": "scm",
-  "python.condaPath": "/usr/local/anaconda3/bin/conda",
-  "gitlens.views.compare.location": "scm",
-  "gitlens.views.search.location": "scm",
-  "powershell.startAutomatically": false,
-  "gitlens.views.compare.avatars": true,
-  "markdownlint.customRules": [
-    "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
-  ],
-  "gitlens.views.repositories.avatars": true,
-  "gitlens.views.search.avatars": true
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
