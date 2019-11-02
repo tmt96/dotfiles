@@ -1,1 +1,4 @@
 prettier
+jshint
+typescript
+typescript-language-server

@@ -1,6 +1,8 @@
 bundler
+pry
 solargraph
 rubocop
 rufo
 ruby-debug-ide
-debase
+byebug
+pry-byebug
