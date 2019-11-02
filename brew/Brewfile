@@ -45,8 +45,17 @@ brew "p7zip"
 brew "pandoc"
 # Object-relational database system
 brew "postgresql"
+# Python version management
+brew "pyenv"
+# Migrate pip packages from one Python version to another
+brew "pyenv-pip-migrate"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
+# Integrate pyenv and system commands
+brew "pyenv-which-ext"
 # Ruby version manager
 brew "rbenv"
+# Auto-installs gems for Ruby installs
 brew "rbenv-default-gems"
 # User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
@@ -72,6 +81,8 @@ brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-npm-migrate"
 # Automatically runs `nodenv rehash`
 brew "nodenv/nodenv/nodenv-package-rehash"
+# Update nodenv plugins not installed with Homebrew
+brew "nodenv/nodenv/nodenv-update"
 cask "adobe-acrobat-reader"
 cask "alfred"
 cask "android-studio"
