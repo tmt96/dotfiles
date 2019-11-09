@@ -17,7 +17,6 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
-  'command-not-found' \
   'directory' \
   'spectrum' \
   'utility' \
@@ -34,7 +33,7 @@ zstyle ':prezto:load' pmodule \
   'prompt'
 
 
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme powerlevel10k
 zstyle ':prezto:module:autosuggestions' color 'yes'
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
