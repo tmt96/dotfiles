@@ -15,6 +15,10 @@ brew "cmake"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl", args: ["with-gssapi", "with-openssl"]
+# Command-line tool to interact with exercism.io
+brew "exercism"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Distributed revision control system
 brew "git"
 # SSL/TLS cryptography library
@@ -23,10 +27,6 @@ brew "openssl"
 brew "sqlite"
 # Alternative to top/htop
 brew "glances"
-# Command-driven, interactive function plotting
-brew "gnuplot"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Mac App Store command-line interface
@@ -34,7 +34,7 @@ brew "mas"
 # Java-based project management
 brew "maven"
 # Scalable distributed version control system
-# brew "mercurial"
+brew "mercurial"
 # Remote terminal application
 brew "mosh"
 # Manage multiple NodeJS versions
@@ -59,6 +59,10 @@ brew "rbenv"
 brew "rbenv-default-gems"
 # User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
+# Programatically correct mistyped console commands
+brew "thefuck"
+# Simplified and community-driven man pages
+brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -67,6 +71,8 @@ brew "tree"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Tracks most-used directories to make cd smarter
+brew "z"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Everything you need to get started with Heroku

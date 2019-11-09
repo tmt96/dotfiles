@@ -2,7 +2,8 @@
 
 function backup {
     if [ -f $1 ]; then
-        yes | mv $1 $1.backup
+        yes | cp -LR $1 $1.backup
+        yes | rm $1
     fi
 }
 

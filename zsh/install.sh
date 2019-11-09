@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 
-source $dir_name/../function.sh
 echo
 echo "Syncing your zsh prezto config..."
 
 dir_name=${0:a:h}
+source $dir_name/../function.sh
 
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
     echo "You don't have prezto cloned. Cloning prezto..."
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" > /dev/null
+else
+    zprezto-update > /dev/null
 fi
 
 echo "Configuring .zshenv"
@@ -32,8 +34,8 @@ echo "Configuring p10k theme"
 backup_and_link $dir_name/.p10k.zsh ${HOME}/.p10k.zsh
 
 echo "Adding iTerm integration..."
-curl -L https://iterm2.com/shell_integration/zsh \
--o ${HOME}/.iterm2_shell_integration.zsh
+curl -LsSf https://iterm2.com/shell_integration/zsh \
+-o ${HOME}/.iterm2_shell_integration.zsh > /dev/null
 
 echo "Done configuring zsh!!"
 echo

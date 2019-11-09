@@ -7,7 +7,7 @@ echo
 echo "Configuring VSCode..."
 echo "Installing your extensions"
 for line in $(cat "./vscode/extensions"); do
-    code --install-extension $line
+    code --install-extension $line > /dev/null
 done
 
 echo "Configure settings & keybindings"

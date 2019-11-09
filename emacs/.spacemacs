@@ -44,11 +44,12 @@ values."
      (c-c++ :variable
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
+     dap
      emacs-lisp
      (git :exclude orgit)
      latex
      bibtex
-     ;; lsp
+     lsp
      markdown
      ;; org
      python

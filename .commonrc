@@ -4,6 +4,10 @@ alias ls='ls -GFh'
 
 alias brewi='brew install'
 alias brewo='brew outdate'
+alias brews='brew search'
+alias brewud='brew update'
+alias brewu='brew upgrade'
+alias brewr='brew uninstall'
 
 alias cask='brew cask'
 alias caski='cask install'

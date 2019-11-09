@@ -4,16 +4,17 @@ echo "Welcome to tmt's dotfiles."
 echo "The process requires your root account password to proceed."
 sudo -v
 
-source ./brew/install.sh
-source ./bash/install.sh
-source ./zsh/install.sh
-source ./vscode/install.sh
-source ./emacs/install.sh
-source ./iterm2/install.sh
-source ./ruby/install.sh
-source ./python/install.sh
-source ./node/install.sh
-source ./rust/install.sh
+root_dir=${0:a:h}
+source $root_dir/brew/install.sh
+source $root_dir/bash/install.sh
+source $root_dir/zsh/install.sh
+source $root_dir/vscode/install.sh
+source $root_dir/emacs/install.sh
+source $root_dir/iterm2/install.sh
+source $root_dir/ruby/install.sh
+source $root_dir/python/install.sh
+source $root_dir/node/install.sh
+source $root_dir/rust/install.sh
 
 echo "Switching you over to zsh"
 zsh_path=/usr/local/bin/zsh

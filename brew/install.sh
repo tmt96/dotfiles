@@ -12,8 +12,8 @@ if ! [ -x "$(command -v brew)" ]; then
 fi;
 
 echo "Installing your apps using Brewfile..."
-sudo chown -R $(whoami) /usr/local/lib /usr/local/sbin
-brew update
+sudo chown -R $(whoami) /usr/local/lib /usr/local/sbin /usr/local/bin
+brew update > /dev/null 2>&1
 brew bundle --file=$dir_name/Brewfile
 
 echo "Linking your shell config files..."

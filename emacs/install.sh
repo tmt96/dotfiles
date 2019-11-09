@@ -9,7 +9,10 @@ backup ${HOME}/.emacs
 if [ ! -f ${HOME}/.spacemacs ]; then
     echo "You don't have an spacemacs config. Cloning spacemacs..."
     backup ${HOME}/.emacs.d
-    git clone https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
+    git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
+else
+    git --git-dir=${HOME}/.emacs.d checkout develop
+    git --git-dir=${HOME}/.emacs.d pull --abort
 fi
 
 echo "Symlinking spacemacs config..."
