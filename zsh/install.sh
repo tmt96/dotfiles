@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+source $dir_name/../function.sh
 echo
 echo "Syncing your zsh prezto config..."
 
@@ -26,6 +27,9 @@ for file in $dir_name/z*; do
         echo "source $file" >>  ${HOME}/."$filename"
     fi
 done
+
+echo "Configuring p10k theme"
+backup_and_link $dir_name/.p10k.zsh ${HOME}/.p10k.zsh
 
 echo "Adding iTerm integration..."
 curl -L https://iterm2.com/shell_integration/zsh \
