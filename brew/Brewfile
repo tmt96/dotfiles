@@ -4,10 +4,9 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/science"
 tap "homebrew/services"
 tap "mistertea/et"
-cask "java"
+tap "nodenv/nodenv"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Cross-platform make
@@ -16,44 +15,54 @@ brew "cmake"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl", args: ["with-gssapi", "with-openssl"]
+# Command-line tool to interact with exercism.io
+brew "exercism"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Distributed revision control system
 brew "git"
 # SSL/TLS cryptography library
 brew "openssl"
 # Command-line interface for SQLite
 brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Alternative to top/htop
 brew "glances"
-# Command-driven, interactive function plotting
-brew "gnuplot"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Mac App Store command-line interface
 brew "mas"
 # Java-based project management
 brew "maven"
-# Interpreted, interactive, object-oriented programming language
-brew "python@2"
 # Scalable distributed version control system
 brew "mercurial"
 # Remote terminal application
 brew "mosh"
-# Platform built on V8 to build network applications
-brew "node"
+# Manage multiple NodeJS versions
+brew "nodenv"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Object-relational database system
 brew "postgresql"
-# Install various Ruby versions and implementations
-brew "ruby-build"
+# Python version management
+brew "pyenv"
+# Migrate pip packages from one Python version to another
+brew "pyenv-pip-migrate"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
+# Integrate pyenv and system commands
+brew "pyenv-which-ext"
 # Ruby version manager
 brew "rbenv"
+# Auto-installs gems for Ruby installs
+brew "rbenv-default-gems"
 # User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
+# Programatically correct mistyped console commands
+brew "thefuck"
+# Simplified and community-driven man pages
+brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -62,18 +71,30 @@ brew "tree"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Tracks most-used directories to make cd smarter
+brew "z"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
+# Fix IntelliJ/WebStorm's npm integration under nodenv
+brew "nodenv/nodenv/jetbrains-npm"
+# Auto-installs packages for Node installs
+brew "nodenv/nodenv/nodenv-default-packages"
+# Migrate npm packages from one Node version to another
+brew "nodenv/nodenv/nodenv-npm-migrate"
+# Automatically runs `nodenv rehash`
+brew "nodenv/nodenv/nodenv-package-rehash"
+# Update nodenv plugins not installed with Homebrew
+brew "nodenv/nodenv/nodenv-update"
 cask "adobe-acrobat-reader"
 cask "alfred"
-cask "anaconda"
 cask "android-studio"
 cask "dash"
 cask "dotnet-sdk"
+cask "dozer"
 cask "emacs"
 cask "firefox"
 cask "flash-player"
@@ -98,18 +119,22 @@ cask "google-backup-and-sync"
 cask "google-chrome"
 cask "iina"
 cask "iterm2"
+cask "java"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keka"
 cask "krita"
 cask "mactex"
 cask "malwarebytes"
+cask "mathpix-snipping-tool"
 cask "mono-mdk"
+cask "miniconda"
+cask "ngrok"
+cask "pomodone"
 cask "powershell"
+cask "rectangle"
 cask "scroll-reverser"
 cask "skype"
-cask "soda-player"
-cask "spectacle"
 cask "spotify"
 cask "sublime-text"
 cask "virtualbox"
@@ -117,7 +142,6 @@ cask "virtualbox-extension-pack"
 cask "visual-studio"
 cask "visual-studio-code"
 mas "Amphetamine", id: 937984704
-mas "CopyClip", id: 595191960
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Irvue", id: 1039633667

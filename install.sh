@@ -4,30 +4,17 @@ echo "Welcome to tmt's dotfiles."
 echo "The process requires your root account password to proceed."
 sudo -v
 
-source ./brew/install.sh
-source ./bash/install.sh
-source ./zsh/install.sh
-source ./vscode/install.sh
-source ./emacs/install.sh
-source ./iterm2/install.sh
-
-# Ruby
-rbenv init
-LATEST_VERSION=$(rbenv install -l | grep -v - | tail -1)
-rbenv version | read CUR_VER _
-if [ "$LATEST_VERSION" = "$CUR_VER" ]; then
-    rbenv install $LATEST_VERSION -N
-    rbenv global $LATEST_VERSION
-fi;
-gem install rubocop solargraph
-
-# Rust
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
-rustup default stable
-rustup update stable
-rustup component add rls rust-analysis rust-src clippy
-
+root_dir=${0:a:h}
+source $root_dir/brew/install.sh
+source $root_dir/bash/install.sh
+source $root_dir/zsh/install.sh
+source $root_dir/vscode/install.sh
+source $root_dir/emacs/install.sh
+source $root_dir/iterm2/install.sh
+source $root_dir/ruby/install.sh
+source $root_dir/python/install.sh
+source $root_dir/node/install.sh
+source $root_dir/rust/install.sh
 
 echo "Switching you over to zsh"
 zsh_path=/usr/local/bin/zsh

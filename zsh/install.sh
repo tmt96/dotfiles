@@ -4,10 +4,13 @@ echo
 echo "Syncing your zsh prezto config..."
 
 dir_name=${0:a:h}
+source $dir_name/../function.sh
 
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
     echo "You don't have prezto cloned. Cloning prezto..."
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" > /dev/null
+else
+    zprezto-update > /dev/null
 fi
 
 echo "Configuring .zshenv"
@@ -27,13 +30,12 @@ for file in $dir_name/z*; do
     fi
 done
 
+echo "Configuring p10k theme"
+backup_and_link $dir_name/.p10k.zsh ${HOME}/.p10k.zsh
+
 echo "Adding iTerm integration..."
-curl -L https://iterm2.com/shell_integration/zsh \
--o ${HOME}/.iterm2_shell_integration.zsh
-test -f ${HOME}/.zshrc || touch ${HOME}/.zshrc
-if ! grep iterm2_shell_integration ${HOME}/.zshrc > /dev/null 2>&1; then
-    echo "test -e \"${HOME}/.iterm2_shell_integration.zsh\" && source \"${HOME}/.iterm2_shell_integration.zsh\"" ${HOME}/.zshrc
-fi
+curl -LsSf https://iterm2.com/shell_integration/zsh \
+-o ${HOME}/.iterm2_shell_integration.zsh > /dev/null
 
 echo "Done configuring zsh!!"
 echo

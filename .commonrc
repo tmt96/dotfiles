@@ -1,21 +1,33 @@
-alias em='  emacsclient -c -a= $*'
+alias em='emacsclient -c -a= $*'
 alias emt='emacsclient -t -a= $*'
+alias ls='ls -GFh'
+
+alias brewi='brew install'
+alias brewo='brew outdate'
+alias brews='brew search'
+alias brewud='brew update'
+alias brewu='brew upgrade'
+alias brewr='brew uninstall'
+
+alias cask='brew cask'
+alias caski='cask install'
+alias casko='cask outdated --greedy'
+alias casku='cask upgrade'
+
 export ALTERNATE_EDITOR=""
-export EDITOR="emt"         # $EDITOR opens in terminal
+export EDITOR="emt"        # $EDITOR opens in terminal
 export VISUAL="em"         # $VISUAL opens in GUI mode
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-alias ls='ls -GFh'
 export TERM=xterm-256color
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/TeX/texbin:"$PATH"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:"$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 source $HOME/.cargo/env
-source /usr/local/anaconda3/etc/profile.d/conda.sh
-if which rbenv > /dev/null; then
-    eval "$(rbenv init - --no-rehash)"
-fi
+source /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh
+source /usr/local/etc/profile.d/z.sh
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).

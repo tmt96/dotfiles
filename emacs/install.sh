@@ -1,15 +1,22 @@
 #!/usr/bin/env zsh
 
+dir_name=${0:a:h}
+source $dir_name/../function.sh
+
 echo
 echo "Configuring emacs..."
-if [ ! -d ${HOME}/.emacs.d ]; then
-    echo "You don't have an emacs config. Cloning spacemacs..."
-    git clone https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
+backup ${HOME}/.emacs
+if [ ! -f ${HOME}/.spacemacs ]; then
+    echo "You don't have an spacemacs config. Cloning spacemacs..."
+    backup ${HOME}/.emacs.d
+    git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
+else
+    git --git-dir=${HOME}/.emacs.d checkout develop
+    git --git-dir=${HOME}/.emacs.d pull --abort
 fi
 
 echo "Symlinking spacemacs config..."
-dir_name=${0:a:h}
-ln -sfn $dir_name/.spacemacs ${HOME}/.spacemacs
+backup_and_link $dir_name/.spacemacs ${HOME}/.spacemacs
 
 # TODO: Configure emacs daemon & client
 echo "Configure emacs daemon..."
