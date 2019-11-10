@@ -9,11 +9,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle :compinstall filename '${HOME}.zshrc'
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
-
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -23,5 +18,5 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi

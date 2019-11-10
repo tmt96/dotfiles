@@ -13,28 +13,29 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'command-not-found' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'emacs'\
-  'homebrew' \
-  'osx' \
-  'tmux'\
-  'git' \
-  'ruby'\
-  'python'\
-  'syntax-highlighting' \
-  'autosuggestions' \
-  'prompt'
+'environment' \
+'terminal' \
+'editor' \
+'history' \
+'command-not-found' \
+'directory' \
+'spectrum' \
+'utility' \
+'completion' \
+'emacs' \
+'git' \
+'osx' \
+'node' \
+'ruby' \
+'python' \
+'tmux' \
+'syntax-highlighting' \
+'autosuggestions' \
+'prompt'
 
 
 zstyle ':prezto:module:prompt' theme 'pure'
 zstyle ':prezto:module:autosuggestions' color 'yes'
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
+zstyle ':prezto:module:python:virtualenv' initialize 'no'
