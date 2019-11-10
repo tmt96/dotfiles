@@ -37,5 +37,9 @@ echo "Adding iTerm integration..."
 curl -LsSf https://iterm2.com/shell_integration/zsh \
 -o ${HOME}/.iterm2_shell_integration.zsh > /dev/null
 
+echo "Configure thefuck for zsh"
+test -f ${HOME}/.fuck.zsh || touch ${HOME}/.fuck.zsh 
+SHELL=zsh thefuck --alias >> ${HOME}/.fuck.zsh
+
 echo "Done configuring zsh!!"
 echo
