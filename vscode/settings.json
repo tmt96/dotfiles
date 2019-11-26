@@ -8,7 +8,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.dragAndDrop": false,
-  "editor.find.autoFindInSelection": true,
+  "editor.find.autoFindInSelection": "multiline",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveTimeout": 250,
@@ -27,6 +27,12 @@
   "files.associations": {
     "*.erb": "erb"
   },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
   "search.showLineNumbers": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 12,
@@ -38,25 +44,19 @@
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.commandPalette.preserveInput": true,
-  "workbench.colorCustomizations": {
-    "[One Dark Pro]": {
-      "statusBar.foreground": "#EFEFEF",
-      "statusBarItem.hoverBackground": "#3F3F55",
-      "activityBar.foreground": "#EFEFEF"
-    }
-  },
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.showTabs": false,
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "vscode-icons",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": true,
 
   /**********************************************
    * Extensions Settings
    ***********************************************/
-  "bracketPairColorizer.showHorizontalScopeLine": false,
-  "bracketPairColorizer.showVerticalScopeLine": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": true,
   "C_Cpp.clang_format_style": "Google",
   "csharp.referencesCodeLens.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,
@@ -204,6 +204,13 @@
   "sync.syncExtensions": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorCustomizations": {
+    "[One Dark Pro]": {
+      "statusBar.foreground": "#EFEFEF",
+      "statusBarItem.hoverBackground": "#3F3F55",
+      "activityBar.foreground": "#EFEFEF"
+    }
+  },
 
   /*************************************
    * Language-specific settings
@@ -223,11 +230,5 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
   }
 }
