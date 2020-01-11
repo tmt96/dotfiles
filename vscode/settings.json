@@ -8,7 +8,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.dragAndDrop": false,
-  "editor.find.autoFindInSelection": true,
+  "editor.find.autoFindInSelection": "multiline",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveTimeout": 250,
@@ -16,7 +16,7 @@
   "explorer.openEditors.visible": 1,
   "editor.fontSize": 14,
   "editor.insertSpaces": true,
-  "editor.lineHeight": 30,
+  "editor.lineHeight": 32,
   "editor.minimap.enabled": false,
   "editor.tabCompletion": "on",
   "editor.wordWrap": "bounded",
@@ -30,7 +30,6 @@
   "search.showLineNumbers": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 12,
-  "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.shell.osx": "zsh",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
   "terminal.integrated.scrollback": 5000,
@@ -191,11 +190,9 @@
   "rust.all_features": true,
   "rust.build_on_save": true,
   "rust.cfg_test": true,
-  "rust.goto_def_racer_fallback": true,
   "rust.unstable_features": true,
   "rust.wait_to_build": 100,
   "solargraph.diagnostics": true,
-  "sync.askGistName": false,
   "sync.autoDownload": false,
   "sync.autoUpload": false,
   "sync.forceDownload": false,
@@ -229,5 +226,15 @@
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
-  }
+  },
+  "[fsharp]": {
+    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
+  },
+  "oneDarkPro.editorTheme": "Onedark Pro",
+  "oneDarkPro.vivid": true,
+  "oneDarkPro.bold": true,
+  "rust-client.enableMultiProjectSetup": true,
+  "rust.clippy_preference": "on",
+  "editor.wordWrapColumn": 100,
+  "terminal.integrated.lineHeight": 1.3
 }

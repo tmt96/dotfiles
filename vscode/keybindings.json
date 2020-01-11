@@ -87,5 +87,17 @@
     "key": "cmd+b",
     "command": "-markdown.extension.editing.toggleBold",
     "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+k cmd+n",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "ctrl+cmd+]",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+cmd+[",
+    "command": "workbench.action.previousEditorInGroup"
   }
 ]
