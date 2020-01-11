@@ -9,7 +9,7 @@ backup_and_link $dir_name/default-packages $(pyenv root)/default-packages
 
 LATEST_VERSION_PY2=$(pyenv install -l | egrep "^[[:space:]]*2.[0-9]+.[0-9]+$" | tail -1)
 LATEST_VERSION_PY2=${LATEST_VERSION_PY2// /}
-pyenv install $LATEST_VERSION_PY2 -s > dev/null
+pyenv install $LATEST_VERSION_PY2 -s > /dev/null
 
 LATEST_VERSION_PY3=$(pyenv install -l | egrep "^[[:space:]]*3.[0-9]+.[0-9]+$" | tail -1)
 LATEST_VERSION_PY3=${LATEST_VERSION_PY3// /}

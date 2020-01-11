@@ -1,11 +1,10 @@
 ipython
-python
 ptvsd
 jedi
-robe
+rope
 flake8
-mypy
-black
 python-language-server
-pyls-mypy
-pyls-black
+mypy; python_version >= '3.6'
+pyls-mypy; python_version >= '3.6'
+black; python_version >= '3.7'
+pyls-black; python_version >= '3.7'
