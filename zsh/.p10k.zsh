@@ -41,7 +41,6 @@ fi
       background_jobs         # presence of background jobs
       status                  # exit code of the last command
       command_execution_time  # duration of the last command
-
       # =========================[ Line #2 ]=========================
       newline
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
@@ -54,7 +53,7 @@ fi
       # go_version            # go version (https://golang.org)
       rust_version          # rustc version (https://www.rust-lang.org)
       rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
-      rvm                     # ruby version from rvm (https://rvm.io)
+      # rvm                     # ruby version from rvm (https://rvm.io)
       prompt_char             # prompt symbol
   )
 
@@ -72,7 +71,7 @@ fi
       # load                  # CPU load
       # time                  # current time
       # =========================[ Line #2 ]=========================
-      newline
+      # newline
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery

@@ -6,7 +6,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-zstyle :compinstall filename '${HOME}.zshrc'
+zstyle :compinstall filename '${HOME}/.zshrc'
 
 autoload -Uz compinit
 # End of lines added by compinstall
@@ -16,14 +16,16 @@ bindkey -e
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete() {
-  local completions=("$(dotnet complete "$words")")
-  reply=( "${(ps:\n:)completions}" )
+    local completions=("$(dotnet complete "$words")")
+    reply=( "${(ps:\n:)completions}" )
 }
 compctl -K _dotnet_zsh_complete dotnet
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+# lt from prezto messes with localtunnel
+unalias lt
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -31,3 +33,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 unalias lt
+# init thefuck
+[[ -f ~/.fuck.zsh ]] && source "${HOME}/.fuck.zsh"
