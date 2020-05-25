@@ -1,155 +1,168 @@
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "mistertea/et"
-tap "nodenv/nodenv"
+# frozen_string_literal: true
+
+tap 'heroku/brew'
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
+tap 'homebrew/science'
+tap 'homebrew/services'
+tap 'mistertea/et'
+tap 'nodenv/nodenv'
 # Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
-# Cross-platform make
-brew "cmake"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl", args: ["with-gssapi", "with-openssl"]
-# Command-line tool to interact with exercism.io
-brew "exercism"
-# Command-line fuzzy finder written in Go
-brew "fzf"
-# Distributed revision control system
-brew "git"
-# SSL/TLS cryptography library
-brew "openssl"
+brew 'bash'
 # Command-line interface for SQLite
-brew "sqlite"
+brew 'sqlite'
+# Cross-platform make
+brew 'cmake'
+# GNU File, Shell, and Text utilities
+brew 'coreutils'
+# Configurable talking characters in ASCII art
+brew 'cowsay'
+# Get a file from an HTTP, HTTPS or FTP server
+brew 'curl'
+# Command-line fuzzy finder written in Go
+brew 'fzf'
+# Distributed revision control system
+brew 'git'
 # Alternative to top/htop
-brew "glances"
+brew 'glances'
+# Interpreted, interactive, object-oriented programming language
+brew 'python', link: false
+# Command-driven, interactive function plotting
+brew 'gnuplot'
+# Graph visualization software from AT&T and Bell Labs
+brew 'graphviz'
+# Database of common MIME types
+brew 'shared-mime-info'
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick"
+brew 'imagemagick'
+# Next-gen compiler infrastructure
+brew 'llvm'
 # Mac App Store command-line interface
-brew "mas"
+brew 'mas'
 # Java-based project management
-brew "maven"
+brew 'maven'
 # Scalable distributed version control system
-brew "mercurial"
-# Remote terminal application
-brew "mosh"
+brew 'mercurial'
 # Manage multiple NodeJS versions
-brew "nodenv"
+brew 'nodenv'
 # 7-Zip (high compression file archiver) implementation
-brew "p7zip"
+brew 'p7zip'
 # Swiss-army knife of markup format conversion
-brew "pandoc"
+brew 'pandoc'
 # Object-relational database system
-brew "postgresql"
+brew 'postgresql'
 # Python version management
-brew "pyenv"
+brew 'pyenv'
 # Migrate pip packages from one Python version to another
-brew "pyenv-pip-migrate"
+brew 'pyenv-pip-migrate'
 # Pyenv plugin to manage virtualenv
-brew "pyenv-virtualenv"
+brew 'pyenv-virtualenv'
 # Integrate pyenv and system commands
-brew "pyenv-which-ext"
+brew 'pyenv-which-ext'
+# Install various Ruby versions and implementations
+brew 'ruby-build'
 # Ruby version manager
-brew "rbenv"
+brew 'rbenv'
 # Auto-installs gems for Ruby installs
-brew "rbenv-default-gems"
-# User interface to the TELNET protocol (built from macOS Sierra sources)
-brew "telnet"
+brew 'rbenv-default-gems'
+# User interface to the TELNET protocol
+brew 'telnet'
 # Programatically correct mistyped console commands
-brew "thefuck"
+brew 'thefuck'
 # Simplified and community-driven man pages
-brew "tldr"
+brew 'tldr'
 # Terminal multiplexer
-brew "tmux"
+brew 'tmux'
 # Display directories as trees (with optional color/HTML output)
-brew "tree"
+brew 'tree'
 # Internet file retriever
-brew "wget"
+brew 'wget'
 # JavaScript package manager
-brew "yarn"
+brew 'yarn'
 # Tracks most-used directories to make cd smarter
-brew "z"
+brew 'z'
 # UNIX shell (command interpreter)
-brew "zsh"
+brew 'zsh'
 # Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
+brew 'heroku/brew/heroku'
 # Remote terminal with IP roaming
-brew "mistertea/et/et"
+brew 'mistertea/et/et'
 # Fix IntelliJ/WebStorm's npm integration under nodenv
-brew "nodenv/nodenv/jetbrains-npm"
+brew 'nodenv/nodenv/jetbrains-npm'
 # Auto-installs packages for Node installs
-brew "nodenv/nodenv/nodenv-default-packages"
+brew 'nodenv/nodenv/nodenv-default-packages'
 # Migrate npm packages from one Node version to another
-brew "nodenv/nodenv/nodenv-npm-migrate"
+brew 'nodenv/nodenv/nodenv-npm-migrate'
 # Automatically runs `nodenv rehash`
-brew "nodenv/nodenv/nodenv-package-rehash"
+brew 'nodenv/nodenv/nodenv-package-rehash'
 # Update nodenv plugins not installed with Homebrew
-brew "nodenv/nodenv/nodenv-update"
-cask "adobe-acrobat-reader"
-cask "alfred"
-cask "android-studio"
-cask "dash"
-cask "dotnet-sdk"
-cask "dozer"
-cask "emacs"
-cask "firefox"
-cask "flash-player"
-cask "font-anonymice-powerline"
-cask "font-consolas-for-powerline"
-cask "font-dejavu-sans-mono-for-powerline"
-cask "font-droid-sans-mono-for-powerline"
-cask "font-fira-mono-for-powerline"
-cask "font-inconsolata-dz-for-powerline"
-cask "font-inconsolata-for-powerline"
-cask "font-inconsolata-g-for-powerline"
-cask "font-liberation-mono-for-powerline"
-cask "font-menlo-for-powerline"
-cask "font-meslo-for-powerline"
-cask "font-monofur-for-powerline"
-cask "font-noto-mono-for-powerline"
-cask "font-roboto-mono-for-powerline"
-cask "font-source-code-pro-for-powerline"
-cask "font-ubuntu-mono-derivative-powerline"
-cask "free-download-manager"
-cask "google-backup-and-sync"
-cask "google-chrome"
-cask "iina"
-cask "iterm2"
-cask "itsycal"
-cask "java"
-cask "jetbrains-toolbox"
-cask "karabiner-elements"
-cask "keka"
-cask "krita"
-cask "mactex"
-cask "malwarebytes"
-cask "mathpix-snipping-tool"
-cask "mono-mdk"
-cask "miniconda"
-cask "ngrok"
-cask "pomodone"
-cask "powershell"
-cask "rectangle"
-cask "scroll-reverser"
-cask "skype"
-cask "spotify"
-cask "sublime-text"
-cask "virtualbox"
-cask "virtualbox-extension-pack"
-cask "visual-studio"
-cask "visual-studio-code"
-mas "Amphetamine", id: 937984704
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Irvue", id: 1039633667
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "OneDrive", id: 823766827
-mas "Pages", id: 409201541
-mas "Spark", id: 1176895641
-mas "Wunderlist", id: 410628904
-mas "Xcode", id: 497799835
+brew 'nodenv/nodenv/nodenv-update'
+cask 'adobe-acrobat-reader'
+cask 'alfred'
+cask 'android-studio'
+cask 'dash'
+cask 'dotnet-sdk'
+cask 'emacs'
+cask 'firefox'
+cask 'flash-player'
+cask 'font-anonymice-powerline'
+cask 'font-consolas-for-powerline'
+cask 'font-dejavu-sans-mono-for-powerline'
+cask 'font-droid-sans-mono-for-powerline'
+cask 'font-fira-mono-for-powerline'
+cask 'font-inconsolata-dz-for-powerline'
+cask 'font-inconsolata-for-powerline'
+cask 'font-inconsolata-g-for-powerline'
+cask 'font-liberation-mono-for-powerline'
+cask 'font-menlo-for-powerline'
+cask 'font-meslo-for-powerline'
+cask 'font-monofur-for-powerline'
+cask 'font-noto-mono-for-powerline'
+cask 'font-roboto-mono-for-powerline'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-ubuntu-mono-derivative-powerline'
+cask 'free-download-manager'
+cask 'google-backup-and-sync'
+cask 'google-chrome'
+cask 'iina'
+cask 'iterm2'
+cask 'itsycal'
+cask 'java'
+cask 'jetbrains-toolbox'
+cask 'karabiner-elements'
+cask 'keka'
+cask 'krita'
+cask 'mactex'
+cask 'malwarebytes'
+cask 'mathpix-snipping-tool'
+cask 'miniconda'
+cask 'mono-mdk'
+cask 'ngrok'
+cask 'pomodone'
+cask 'powershell'
+cask 'rectangle'
+cask 'scroll-reverser'
+cask 'skype'
+cask 'soda-player'
+cask 'spectacle'
+cask 'spotify'
+cask 'sublime-text'
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
+cask 'visual-studio'
+cask 'visual-studio-code'
+mas 'Amphetamine', id: 937_984_704
+mas 'GarageBand', id: 682_658_836
+mas 'iMovie', id: 408_981_434
+mas 'Irvue', id: 1_039_633_667
+mas 'Keynote', id: 409_183_694
+mas 'Messenger', id: 1_480_068_668
+mas 'Numbers', id: 409_203_825
+mas 'OneDrive', id: 823_766_827
+mas 'Pages', id: 409_201_541
+mas 'PhotoScape X', id: 929_507_092
+mas 'Spark', id: 1_176_895_641
+mas 'Xcode', id: 497_799_835

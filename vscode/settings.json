@@ -199,6 +199,7 @@
   "rust.clippy_preference": "on",
   "rust.unstable_features": true,
   "rust.wait_to_build": 100,
+  "rust-analyzer.trace.server": "messages",
   "solargraph.diagnostics": true,
   "sync.autoDownload": false,
   "sync.autoUpload": false,
@@ -206,6 +207,7 @@
   "sync.quietSync": true,
   "sync.removeExtensions": false,
   "sync.syncExtensions": true,
+  "todo-tree.tree.showScanModeButton": false,
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorCustomizations": {
