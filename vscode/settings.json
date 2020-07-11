@@ -200,6 +200,7 @@
   "sync.quietSync": true,
   "sync.removeExtensions": false,
   "sync.syncExtensions": true,
+  "todo-tree.tree.showScanModeButton": false,
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorCustomizations": {
