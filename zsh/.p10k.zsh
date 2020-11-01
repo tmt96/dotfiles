@@ -19,6 +19,13 @@ else
   local p10k_lean_restore_aliases=0
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 () {
   emulate -L zsh
   setopt no_unset
@@ -47,6 +54,7 @@ fi
       anaconda                # conda environment (https://conda.io/)
       pyenv                   # python environment (https://github.com/pyenv/pyenv)
       nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
+      jenv
       # nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       # nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
       # node_version          # node.js version
@@ -363,7 +371,7 @@ fi
   # Show status of repositories of these types. You can add svn and/or hg if you are
   # using them. If you do, your prompt may become slow even when your current directory
   # isn't in an svn or hg reposotiry.
-  typeset -g POWERLEVEL9K_VCS_BACKENDS=(git hg)
+  typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 
   typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=244
   # These settings are used for respositories other than Git or when gitstatusd fails and

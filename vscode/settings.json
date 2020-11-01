@@ -11,7 +11,6 @@
   "editor.find.autoFindInSelection": "multiline",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.formatOnSaveTimeout": 250,
   "editor.suggestSelection": "first",
   "explorer.openEditors.visible": 1,
   "editor.fontSize": 14,
@@ -181,10 +180,9 @@
   "powershell.integratedConsole.showOnStartup": false,
   "python.condaPath": "usr/local/Caskroom/miniconda/base/condabin/conda",
   "python.formatting.provider": "black",
-  "python.jediEnabled": false,
+  "python.languageServer": "Microsoft",
   "python.linting.flake8Args": ["--max-complexity=6"],
   "rest-client.enableTelemetry": true,
-  "rust.all_targets": true,
   "ruby.format": false,
   "ruby.lint": {
     "rubocop": {
@@ -192,16 +190,9 @@
       "rails": true
     }
   },
-  "rust.all_features": true,
-  "rust.build_on_save": true,
-  "rust.cfg_test": true,
-  "rust-client.enableMultiProjectSetup": null,
-  "rust.clippy_preference": "on",
-  "rust.unstable_features": true,
-  "rust.wait_to_build": 100,
-  "rust-analyzer.trace.server": "messages",
-  "rust-analyzer.inlayHints.parameterHints": false,
+  "rust-analyzer.cargo.allFeatures": true,
   "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.inlayHints.parameterHints": false,
   "solargraph.diagnostics": true,
   "sync.autoDownload": false,
   "sync.autoUpload": false,
@@ -231,10 +222,6 @@
   },
   "[latex]": {
     "editor.formatOnSave": false
-  },
-  "[rust]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

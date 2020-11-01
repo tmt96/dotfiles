@@ -49,6 +49,7 @@ values."
      git
      latex
      bibtex
+     javascript
      lsp
      markdown
      (org :variables

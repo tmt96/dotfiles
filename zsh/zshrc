@@ -14,6 +14,10 @@ autoload -Uz compinit
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# init jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init - --no-rehash)"
+
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete() {
     local completions=("$(dotnet complete "$words")")
