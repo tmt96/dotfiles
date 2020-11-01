@@ -41,22 +41,33 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t)
      ;; better-defaults
-     (c-c++ :variable
-            c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support t)
-     dap
+     ;; (c-c++ :variable
+     ;;        c-c++-default-mode-for-headers 'c++-mode
+     ;;        c-c++-enable-clang-support t)
+     ;; dap
      emacs-lisp
-     (git :exclude orgit)
+     git
      latex
      bibtex
      lsp
      markdown
-     ;; org
+     (org :variables
+          org-agenda-files (directory-files-recursively "~/Dropbox/org/" "\\.org$")
+          org-agenda-skip-scheduled-if-deadline-is-shown t
+          org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled
+          org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p!)" "BLOCKED(b@)" "|" "DONE(d!)" "DELEGATED(g@)" "NO-OP(n@)"))
+          org-enforce-todo-dependencies t
+          org-superstar-item-bullet-alist
+          '((?+ . ?•)
+            (?* . ?▪)
+            (?- . ?➤))
+          org-ellipsis " ▼"
+          org-log-into-drawer "LOGBOOK")
      python
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     (spacemacs-org :packages org-plus-contrib)
+     (spacemacs-org :packages org-plus-contrib org-superstar)
      (spacemacs-editing :packages
                         avy
                         expand-region
@@ -149,8 +160,16 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
+   ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
+   ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
+   ;; first three are spaceline themes. `doom' is the doom-emacs mode-line.
+   ;; `vanilla' is default Emacs mode-line. `custom' is a user defined themes,
+   ;; refer to the DOCUMENTATION.org for more info on how to create your own
+   ;; spaceline theme. Value can be a symbol or list with additional properties.
+   ;; (default '(spacemacs :separator wave :separator-scale 1.5))
+   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -282,8 +301,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
-   
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -326,10 +344,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (pixel-scroll-mode)
-  (global-display-line-numbers-mode)
-  (scroll-bar-mode)
-
-  )
+  (scroll-bar-mode))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -340,7 +355,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
   (global-company-mode)
-  )
+  (global-visual-line-mode)
+  (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-truncate-lines-off)))
+  (require 'org-mouse))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -358,3 +375,25 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   '(org-superstar web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode treepy graphql htmlize ghub let-alist auctex-latexmk company-quickhelp org-ref pdf-tools key-chord tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode company-anaconda anaconda-mode pythonic disaster company-c-headers cmake-mode clang-format csv-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump f define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link toc-org orgit org-bullets xterm-color unfill smeargle shell-pop org-plus-contrib mwim multi-term mmm-mode markdown-toc s markdown-mode magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help dash company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make helm helm-core popup flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper bind-map bind-key auto-compile packed which-key ivy hydra async ace-window avy)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
