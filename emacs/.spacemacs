@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      (org :variables
-          org-agenda-files (directory-files-recursively "~/Dropbox (Facebook)/org-files/" "\\.org$")
+          org-agenda-files (directory-files-recursively "~/org/" "\\.org$")
           org-agenda-skip-scheduled-if-deadline-is-shown t
           org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled
           org-agenda-include-diary nil
@@ -65,9 +65,9 @@ This function should only modify configuration layer settings."
           org-enforce-todo-dependencies t
           org-journal-file-format "%Y/%m-%d.org"
           org-journal-date-format "%A, %b %d"
-          org-journal-dir "~/Dropbox (Facebook)/org-files/"
+          org-journal-dir "~/org/"
           org-journal-file-type 'weekly
-          org-journal-file-header "#+TITLE: %m-%d Weekly Journal\n#+SETUPFILE: ~/Dropbox (Facebook)/org-files/master.org\n"
+          org-journal-file-header "#+TITLE: %m-%d Weekly Journal\n#+SETUPFILE: ~/org/master.org\n"
           org-journal-enable-agenda-integration t
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"PROGRESS\"|TODO=\"BLOCKED\""
           org-ellipsis " ▼"
@@ -422,8 +422,6 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#dedede")
  '(line-spacing 0.2)
- '(org-agenda-files
-   '("~/Dropbox (Facebook)/org-files/2020/10-05.org" "~/Dropbox (Facebook)/org-files/master.org" "~/Dropbox (Facebook)/org-files/quality_analyzer.org" "~/Dropbox (Facebook)/org-files/2020/07-20.org" "~/Dropbox (Facebook)/org-files/2020/07-27.org" "~/Dropbox (Facebook)/org-files/2020/08-03.org" "~/Dropbox (Facebook)/org-files/2020/08-10.org" "~/Dropbox (Facebook)/org-files/2020/08-17.org" "~/Dropbox (Facebook)/org-files/2020/08-24.org" "~/Dropbox (Facebook)/org-files/2020/08-31.org" "~/Dropbox (Facebook)/org-files/2020/09-07.org" "~/Dropbox (Facebook)/org-files/2020/09-14.org" "~/Dropbox (Facebook)/org-files/2020/09-21.org" "~/Dropbox (Facebook)/org-files/2020/09-28.org" "~/Dropbox (Facebook)/org-files/2020/master.org" "~/Dropbox (Facebook)/org-files/Getting Started with Orgzly.org" "~/Dropbox (Facebook)/org-files/career_growth.org" "~/Dropbox (Facebook)/org-files/device_config.org" "~/Dropbox (Facebook)/org-files/misc_projects.org" "~/Dropbox (Facebook)/org-files/notebook_structure.org" "~/Dropbox (Facebook)/org-files/org_tutorial.org" "~/Dropbox (Facebook)/org-files/orgcard.org" "~/Dropbox (Facebook)/org-files/reference.org" "~/Dropbox (Facebook)/org-files/relocation.org" "/Users/tuanmt/Dropbox (Facebook)/org-files/2020/10-26.org"))
  '(package-selected-packages
    '(leuven-theme poet-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode treepy graphql htmlize ghub let-alist auctex-latexmk company-quickhelp org-ref pdf-tools key-chord tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode company-anaconda anaconda-mode pythonic disaster company-c-headers cmake-mode clang-format csv-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump f define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link toc-org orgit org-bullets xterm-color unfill smeargle shell-pop org-plus-contrib mwim multi-term mmm-mode markdown-toc s markdown-mode magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help dash company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make helm helm-core popup flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper bind-map bind-key auto-compile packed which-key ivy hydra async ace-window avy)))
 (custom-set-faces
