@@ -1,5 +1,4 @@
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion:*' accept-exact '*(N)'
@@ -16,7 +15,7 @@ bindkey -e
 
 # init jenv
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init - --no-rehash)"
+# eval "$(jenv init - --no-rehash)"
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete() {

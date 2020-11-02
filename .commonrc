@@ -23,6 +23,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:"$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/doom-emacs/bin:$PATH"
 
 source $HOME/.cargo/env
 source /opt/miniconda3/etc/profile.d/conda.sh
