@@ -7,7 +7,8 @@
 (nconc org-modules
        '(org-capture
          org-checklist
-         org-habit-alert-faceorg-id
+         org-habit
+         org-id
          org-protocol))
 
 (after! org
