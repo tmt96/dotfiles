@@ -72,7 +72,7 @@ This function should only modify configuration layer settings."
           org-journal-carryover-items "TODO=\"TODO\"|TODO=\"PROGRESS\"|TODO=\"BLOCKED\""
           org-ellipsis " ▼"
           org-log-into-drawer t)
-     ;; python
+     python
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -293,7 +293,6 @@ values."
    ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers t
-
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -367,7 +366,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-visual-line-mode)
-;;  (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
 
   (require 'org-mouse)
   (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-truncate-lines-off)))
