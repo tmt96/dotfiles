@@ -28,8 +28,6 @@ compctl -K _dotnet_zsh_complete dotnet
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-# lt from prezto messes with localtunnel
-unalias lt
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
