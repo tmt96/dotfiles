@@ -1,3 +1,5 @@
+tap "clementtsang/bottom"
+tap "d12frosted/emacs-plus"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -9,6 +11,8 @@ tap "mistertea/et"
 tap "nodenv/nodenv"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Command-line interface for SQLite
+brew "sqlite"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
@@ -17,32 +21,36 @@ brew "cmake"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection
-brew "gcc", link: false
+brew "gcc"
 # Distributed revision control system
 brew "git"
-# Command-line interface for SQLite
-brew "sqlite"
-# Alternative to top/htop
-brew "glances"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Add GitHub support to git on the command-line
 brew "hub"
 # Interpreted, interactive, object-oriented programming language
-brew "python", link: false
+brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Manage your Java environment
 brew "jenv"
+# C99 library which implements a VT220 or xterm terminal emulator
+brew "libvterm"
 # Mac App Store command-line interface
 brew "mas"
+# Development kit for the Java programming language
+brew "openjdk"
 # Java-based project management
 brew "maven"
-# Programs that partition graphs and order matrices
-brew "metis"
 # Minimalist GNU for Windows and GCC cross-compilers
 brew "mingw-w64"
+# Install NodeJS versions
+brew "node-build"
 # Manage multiple NodeJS versions
 brew "nodenv"
 # 7-Zip (high compression file archiver) implementation
@@ -85,6 +93,9 @@ brew "yarn"
 brew "z"
 # UNIX shell (command interpreter)
 brew "zsh"
+# A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
+brew "clementtsang/bottom/bottom"
+brew "d12frosted/emacs-plus/emacs-plus@27"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Fix IntelliJ/WebStorm's npm integration under nodenv
@@ -103,25 +114,15 @@ cask "android-platform-tools"
 cask "bartender"
 cask "dash"
 cask "dotnet-sdk"
-cask "emacs"
 cask "flash-player"
-cask "font-anonymice-powerline"
 cask "font-consolas-for-powerline"
-cask "font-dejavu-sans-mono-for-powerline"
-cask "font-droid-sans-mono-for-powerline"
-cask "font-fira-mono-for-powerline"
 cask "font-inconsolata-dz-for-powerline"
 cask "font-inconsolata-for-powerline"
-cask "font-inconsolata-g-for-powerline"
-cask "font-liberation-mono-for-powerline"
 cask "font-menlo-for-powerline"
 cask "font-meslo-for-powerline"
-cask "font-monofur-for-powerline"
-cask "font-noto-mono-for-powerline"
-cask "font-roboto-mono-for-powerline"
-cask "font-source-code-pro-for-powerline"
-cask "font-ubuntu-mono-derivative-powerline"
+cask "google-backup-and-sync"
 cask "iina"
+cask "iterm2"
 cask "itsycal"
 cask "java"
 cask "jetbrains-toolbox"
@@ -131,7 +132,6 @@ cask "krita"
 cask "mactex"
 cask "malwarebytes"
 cask "mathpix-snipping-tool"
-cask "miniconda"
 cask "ngrok"
 cask "pomodone"
 cask "powershell"
@@ -149,11 +149,11 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LastPass", id: 926036361
+mas "Messenger", id: 1480068668
 mas "Microsoft To Do", id: 1274495053
 mas "Numbers", id: 409203825
 mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
 mas "PhotoScape X", id: 929507092
 mas "Spark", id: 1176895641
-mas "Wunderlist", id: 410628904
 mas "Xcode", id: 497799835
