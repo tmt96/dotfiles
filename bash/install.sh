@@ -2,7 +2,7 @@
 
 echo "Configuring bash..."
 dir_name=`dirname "${BASH_SOURCE[0]}"`
-dir_name=`( cd "$dir_name" && pwd )`
+dir_name=`( cd "$dir_name" > /dev/null 2>&1 && pwd )`
 
 echo "Configuring .bash_profile..."
 # commonrc

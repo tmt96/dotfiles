@@ -48,7 +48,19 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-(package! org-super-agenda)
-(package! org-wild-notifier)
+
 (package! leuven-theme)
 (package! modus-operandi-theme)
+
+;; org packages
+(when (featurep! :lang org +super-agenda)
+  (package! org-super-agenda)
+  )
+(when (featurep! :lang org +notify)
+  (package! org-wild-notifier)
+  )
+
+;; ui fixes
+(when (featurep! :ui treemacs +icons)
+  (package! treemacs-all-the-icons)
+  )

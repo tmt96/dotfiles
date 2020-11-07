@@ -10,5 +10,5 @@ Thumbs.db
 # Dumb idea to sync iterm plist
 iterm2/profile
 
-# doom custom
+# Doom custom file
 emacs/.doom.d/custom.el

@@ -1,15 +1,23 @@
 ;;; +bindings.el -*- lexical-binding: t; -*-
 
+
+;; (use-package! counsel
+;;   :init
+;;   (define-key! [remap org-set-tags-command] nil))
+
 (map!
  ;; Fix silly Mac-specific keybindings
  (:when IS-MAC
   "s-x"                #'kill-region
   )
+
  ;; swiper is love swiper is life
  (:when (featurep! :completion ivy)
   "C-s"         #'swiper
   "C-r"         #'swiper-backward
   )
+
+ ;; Reset some org-mode keybind
  (:after org
   (:map org-mode-map
    ;;Reset default behavior overriden by doom
@@ -42,4 +50,15 @@
    "C-M-<left>"        #'sp-backward-barf-sexp
    "C-M-<right>"       #'sp-forward-barf-sexp
    ))
+
+ :leader
+ ;; for "notes", i.e org-mode
+ (:prefix "n"
+  (:when (featurep! :lang org +journal)
+   (:prefix "j"
+    :desc "Current journal file"        "c"     #'org-journal-open-current-journal-file
+    :desc "Previous journal entry"      "b"     #'org-journal-previous-entry
+    :desc "Next journal entry"          "f"     #'org-journal-next-entry
+    ))
+  )
  )
