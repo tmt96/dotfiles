@@ -1,5 +1,10 @@
 ;;; +bindings.el -*- lexical-binding: t; -*-
 
+
+;; (use-package! counsel
+;;   :init
+;;   (define-key! [remap org-set-tags-command] nil))
+
 (map!
  ;; Fix silly Mac-specific keybindings
  (:when IS-MAC
@@ -51,6 +56,9 @@
  (:prefix "n"
   (:when (featurep! :lang org +journal)
    (:prefix "j"
-    :desc "Current journal file"        "c"    #'org-journal-open-current-journal-file))
+    :desc "Current journal file"        "c"     #'org-journal-open-current-journal-file
+    :desc "Previous journal entry"      "b"     #'org-journal-previous-entry
+    :desc "Next journal entry"          "f"     #'org-journal-next-entry
+    ))
   )
  )
