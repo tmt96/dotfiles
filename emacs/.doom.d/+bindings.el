@@ -22,8 +22,6 @@
   (:map org-mode-map
    ;;Reset default behavior overriden by doom
    "C-c a"              #'org-agenda
-   "M-<right>"          #'org-do-demote
-   "M-<left>"           #'org-do-promote
    ;; Make structural editing smart with blank space
    "C-RET"              #'+org/smart-org-insert-heading-respect-content-dwim
    [C-return]           #'+org/smart-org-insert-heading-respect-content-dwim
@@ -60,5 +58,14 @@
     :desc "Previous journal entry"      "b"     #'org-journal-previous-entry
     :desc "Next journal entry"          "f"     #'org-journal-next-entry
     ))
+  (:when (featurep! :lang org +pomodoro)
+   (:prefix "p"
+    "p"         #'org-pomodoro
+    "e"         #'org-pomodoro-extend-last-clock))
   )
+
+ :localleader
+ (:map org-mode-map
+  (:prefix "r"
+   "R"          #'org-refile-copy))
  )

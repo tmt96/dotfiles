@@ -13,6 +13,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setq +word-wrap-extra-indent 2)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -25,6 +27,8 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "Menlo for Powerline" :size 13 :weight 'light))
+(setq line-spacing 0.3)
 
 ;; Nice icons in modeline
 (use-package! doom-modeline
