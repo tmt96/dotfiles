@@ -150,11 +150,12 @@
         +dragandrop
         +journal
         +pandoc
+        +pomodoro
         +pretty
         +roam
         +super-agenda
         +notify
-        +bigheadings)          ; organize your plain life in plain text
+        +bigheadings)      ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional

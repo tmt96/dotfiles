@@ -3,9 +3,6 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org")
-(when (featurep! :lang org +roam)
-  (setq org-roam-directory org-directory)
-)
 
 (nconc org-modules
        '(org-capture
@@ -14,8 +11,25 @@
          org-id
          org-protocol))
 
+(when (featurep! :lang org +roam)
+  (setq org-roam-directory org-directory)
+)
+
 (after! org
   (setq
+   ;; ui & ux fixes
+   org-tags-column -90
+   org-ellipsis " ▼"
+   org-list-demote-modify-bullet
+   '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
+   org-id-link-to-org-use-id t
+
+   ;; todo settings
+   org-todo-keywords
+   '((sequence "TODO(t)" "PROGRESS(p!)" "BLOCKED(b@)" "|" "DONE(d!)" "DELEGATED(g@)" "NO-OP(n@)"))
+   org-enforce-todo-dependencies t
+   org-log-into-drawer "LOGBOOK"
+
    ;; org-agenda settings
    org-agenda-files (directory-files-recursively org-directory "\\.org$")
    org-agenda-skip-scheduled-if-deadline-is-shown t
@@ -27,25 +41,13 @@
       (todo . "%-12c")
       (tags . "%-12c")
       (search . "%-12c")))
-
-   ;; todo settings
-   org-todo-keywords
-   '((sequence "TODO(t)" "PROGRESS(p!)" "BLOCKED(b@)" "|" "DONE(d!)" "DELEGATED(g@)" "NO-OP(n@)"))
-   org-enforce-todo-dependencies t
-   org-log-into-drawer "LOGBOOK"
-
-   ;; ui fixes
-   org-tags-column -90
-   org-ellipsis " ▼"
-   org-list-demote-modify-bullet
-   '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
    )
   (when (featurep! :lang org +bigheadings)
     (custom-set-faces!
-      '(org-document-title :height 1.4)
-      '(org-level-1 :inherit outline-1 :height 1.3)
-      '(org-level-2 :inherit outline-2 :height 1.2)
-      '(org-level-3 :inherit outline-3 :height 1.1)
+      '(org-document-title :height 1.3)
+      '(org-level-1 :inherit outline-1 :height 1.2)
+      '(org-level-2 :inherit outline-2 :height 1.1)
+      '(org-level-3 :inherit outline-3 :height 1.05)
       ))
   (unsetq-hook! 'org-mode-hook (company-mode -1))
   )
@@ -122,4 +124,12 @@
 (use-package! org-roam
   :when (featurep! :lang org +roam)
   :custom
-  (org-roam-graph-executable (executable-find "neato")))
+  (org-roam-graph-executable (executable-find "neato"))
+  )
+
+(use-package! org-pomodoro
+  :when (featurep! :lang org +pomodoro)
+  :after org
+  :custom
+  (org-pomodoro-manual-break t)
+  )

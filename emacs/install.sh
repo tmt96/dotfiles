@@ -6,17 +6,33 @@ source $dir_name/../function.sh
 echo
 echo "Configuring emacs..."
 backup ${HOME}/.emacs
-if [ ! -f ${HOME}/.spacemacs ]; then
+backup ${HOME}/.emacs.d
+
+if [ ! -d ${HOME}/spacemacs ]; then
     echo "You don't have an spacemacs config. Cloning spacemacs..."
-    backup ${HOME}/.emacs.d
-    git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/.emacs.d
+    git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/spacemacs
 else
-    git --git-dir=${HOME}/.emacs.d checkout develop
-    git --git-dir=${HOME}/.emacs.d pull --abort
+    git --git-dir=${HOME}/spacemacs checkout develop
+    git --git-dir=${HOME}/spacemacs pull --abort
 fi
 
 echo "Symlinking spacemacs config..."
 backup_and_link $dir_name/.spacemacs ${HOME}/.spacemacs
+
+if [ ! -d ${HOME}/doom-emacs ]; then
+    echo "You don't have an spacemacs config. Cloning spacemacs..."
+    git clone https://github.com/hlissner/doom-emacs ${HOME}/doom-emacs
+else
+    git --git-dir=${HOME}/doom-emacs pull --abort
+fi
+
+echo "Symlinking Doom emacs config..."
+backup_and_link $dir_name/.doom.d ${HOME}/.doom.d
+${HOME}/doom-emacs/bin/doom install -y
+
+echo "Installing chemacs & configuring profiles"
+wget -O ~/.emacs https://raw.githubusercontent.com/plexus/chemacs/master/.emacs
+backup_and_link $dir_name/.emasc-profiles.el
 
 # TODO: Configure emacs daemon & client
 echo "Configure emacs daemon..."
