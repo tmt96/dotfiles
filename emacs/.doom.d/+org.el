@@ -55,6 +55,7 @@
 ;; journal
 (use-package! org-journal
   :when (featurep! :lang org +journal)
+  :defer 1
   :init
   (setq org-journal-prefix-key "C-c j ")
   :custom
@@ -102,6 +103,7 @@
 ;; bullet formatting
 (use-package! org-superstar
   :when (featurep! :lang org +pretty)
+  :after org
   :custom
   (org-superstar-item-bullet-alist
    '((?+ . ?•)
@@ -112,17 +114,18 @@
 
 ;; notification
 (use-package! org-wild-notifier
-  :when (featurep! :lang org +notify)
+  :when (and IS-MAC (featurep! :lang org +notify))
   :after org
   :config
   (org-wild-notifier-mode)
   :custom
   (org-wild-notifier-keyword-whitelist '("TODO" "PROGRESS" "BLOCKED"))
-  (alert-default-style 'osx-notifier)
+  (alert-default-style (cond (IS-MAC 'osx-notifier) (t 'notifications)))
   )
 
 (use-package! org-roam
   :when (featurep! :lang org +roam)
+  :after org
   :custom
   (org-roam-graph-executable (executable-find "neato"))
   )

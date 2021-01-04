@@ -27,7 +27,10 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Menlo for Powerline" :size 13 :weight 'light))
+(setq +ui/font-face (cond (IS-WINDOWS "Cascadia Code")
+                          (IS-MAC "Menlo for Powerline")
+                            (t "monospace")))
+(setq doom-font (font-spec :family  +ui/font-face :size 13 :weight 'light))
 (setq line-spacing 0.3)
 
 ;; Nice icons in modeline
@@ -39,5 +42,6 @@
 ;; Icons in treemacs
 (use-package! treemacs-all-the-icons
   :when (featurep! :ui treemacs +icons)
+  :defer t
   :config
   (treemacs-load-theme '"all-the-icons"))

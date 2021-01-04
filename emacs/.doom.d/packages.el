@@ -51,12 +51,13 @@
 
 (package! leuven-theme)
 (package! modus-operandi-theme)
+(package! esup)
 
 ;; org packages
 (when (featurep! :lang org +super-agenda)
   (package! org-super-agenda)
   )
-(when (featurep! :lang org +notify)
+(when (and IS-MAC (featurep! :lang org +notify))
   (package! org-wild-notifier)
   )
 
