@@ -27,23 +27,20 @@
    ;; todo settings
    org-todo-keywords
    '((sequence
-      "TODO"
-      "PROGRESS"
-      "BLOCKED"
       "TASK(t)"         ; A newly-filed task, have not been evaluated or scheduled yet
       "HOLD(h)"         ; A task that was decided to be put off for a later date
-      "EVAL(e)"         ; A task that needs to be evaluated on feasibility & could potentially be doen soon
-      "NEXT(n)"         ; A task that is ready to be done and should be done soon (<3 days)
-      "LOOP(l)"         ; A recurring task
-      "WAIT(w)"         ; A task that is hold off by other tasks, or by other people/external factors
-      "PROG(p)"         ; An in-progress task
+      "EVAL(e)"         ; A task that needs to be evaluated on feasibility & could potentially be done soon
+      "NEXT(n!)"         ; A task that is ready to be done and should be done soon (<3 days)
+      "LOOP(l!)"         ; A recurring task
+      "WAIT(w@)"         ; A task that is hold off by other tasks, or by other people/external factors
+      "PROG(p!)"         ; An in-progress task
       "MEET(m)"         ; A meeting/call
       "IDEA(i)"         ; an unconfirmed/unsubstantiated idea
       "|"
       "DONE(d!)"        ; Self-explanatory
-      "PASS(>)"         ; Another person will take over
-      "DROP(x)"         ; Task is dropped/decided against doing
-      "DELEGATED(g@)" "NO-OP(n@)"))
+      "PASS(>@)"         ; Another person will take over
+      "DROP(x@)"         ; Task is dropped/decided against doing
+    ))
    org-enforce-todo-dependencies t
    org-log-into-drawer "LOGBOOK"
    org-todo-repeat-to-state "LOOP"
