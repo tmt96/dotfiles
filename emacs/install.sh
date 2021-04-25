@@ -12,8 +12,8 @@ if [ ! -d ${HOME}/spacemacs ]; then
     echo "You don't have an spacemacs config. Cloning spacemacs..."
     git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/spacemacs
 else
-    git --git-dir=${HOME}/spacemacs checkout develop
-    git --git-dir=${HOME}/spacemacs pull --abort
+    git --git-dir=${HOME}/spacemacs/.git checkout develop
+    git --git-dir=${HOME}/spacemacs/.git pull --abort
 fi
 
 echo "Symlinking spacemacs config..."
@@ -23,7 +23,7 @@ if [ ! -d ${HOME}/doom-emacs ]; then
     echo "You don't have an spacemacs config. Cloning spacemacs..."
     git clone https://github.com/hlissner/doom-emacs ${HOME}/doom-emacs
 else
-    git --git-dir=${HOME}/doom-emacs pull --abort
+    yes | ${HOME}/doom-emacs/bin/doom upgrade
 fi
 
 echo "Symlinking Doom emacs config..."

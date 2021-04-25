@@ -9,6 +9,7 @@
          org-checklist
          org-habit
          org-id
+         org-inlinetask
          org-protocol))
 
 (when (featurep! :lang org +roam)
@@ -105,7 +106,7 @@
   :custom
   (org-superstar-item-bullet-alist
    '((?+ . ?•)
-     (?* . ?▪)
+     (?* . ?❅)
      (?- . ?➤)))
   (org-superstar-todo-bullet-alist nil)
   )
