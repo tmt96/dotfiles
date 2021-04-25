@@ -27,9 +27,24 @@
 
    ;; todo settings
    org-todo-keywords
-   '((sequence "TODO(t)" "PROGRESS(p!)" "BLOCKED(b@)" "|" "DONE(d!)" "DELEGATED(g@)" "NO-OP(n@)"))
+   '((sequence
+      "TASK(t)"         ; A newly-filed task, have not been evaluated or scheduled yet
+      "HOLD(h)"         ; A task that was decided to be put off for a later date
+      "EVAL(e)"         ; A task that needs to be evaluated on feasibility & could potentially be done soon
+      "NEXT(n!)"         ; A task that is ready to be done and should be done soon (<3 days)
+      "LOOP(l!)"         ; A recurring task
+      "WAIT(w@)"         ; A task that is hold off by other tasks, or by other people/external factors
+      "PROG(p!)"         ; An in-progress task
+      "MEET(m)"         ; A meeting/call
+      "IDEA(i)"         ; an unconfirmed/unsubstantiated idea
+      "|"
+      "DONE(d!)"        ; Self-explanatory
+      "PASS(>@)"         ; Another person will take over
+      "DROP(x@)"         ; Task is dropped/decided against doing
+    ))
    org-enforce-todo-dependencies t
    org-log-into-drawer "LOGBOOK"
+   org-todo-repeat-to-state "LOOP"
 
    ;; org-agenda settings
    org-agenda-files (directory-files-recursively org-directory "\\.org$")
@@ -65,7 +80,7 @@
   (org-journal-file-type 'weekly)
   (org-journal-file-header "#+TITLE: %m-%d Weekly Journal\n#+SETUPFILE: ~/org/master.org\n")
   (org-journal-enable-agenda-integration t)
-  (org-journal-carryover-items "TODO=\"TODO\"|TODO=\"PROGRESS\"|TODO=\"BLOCKED\"")
+  (org-journal-carryover-items "TODO=\"TASK\"|TODO=\"HOLD\"|TODO=\"EVAL\"|TODO=\"MEET\"|TODO=\"NEXT\"|TODO=\"PROG\"|TODO=\"WAIT\"")
   )
 
 ;; agenda format
@@ -78,26 +93,30 @@
   (org-super-agenda-groups
    '((:name "Schedule"
       :time-grid t)
+     (:name "Habits"
+      :habit t)
      (:name "Blocked"
-      :todo "BLOCKED" :order 1)
+      :todo "WAIT" :order 1)
      (:name "Due"
       :deadline today)
      (:name "Overdue"
       :deadline past)
-     (:name "Ongoing"
-      :scheduled past)
      (:name "Important"
       :priority "A")
-     (:name "Todo soon"
-      :scheduled future :order 1)
-     (:name "Due soon"
-      :deadline future )
-     (:name "Behind"
+     (:name "In-progress"
+      :todo "PROG")
+     (:name "Meeting"
+      :todo "MEET")
+     (:name "Next"
+      :todo "NEXT")
+     (:name "Evaluating"
+      :todo "EVAL")
+     (:name "Not yet filed"
+      :todo "TASK")
+     (:name "Career Task Behind"
       :todo ("NOT_STARTED" "BEHIND") :order 1)
      (:name "Career"
-      :tag "career_growth" :order 2)
-     (:name "Misc"
-      :todo ("TODO PROGRESS") :order 2)))
+      :tag "career_growth" :order 2)))
   )
 
 ;; bullet formatting
@@ -118,7 +137,7 @@
   :config
   (org-wild-notifier-mode)
   :custom
-  (org-wild-notifier-keyword-whitelist '("TODO" "PROGRESS" "BLOCKED"))
+  (org-wild-notifier-keyword-blacklist '("DONE" "PASS" "DROP"))
   (alert-default-style 'osx-notifier)
   )
 

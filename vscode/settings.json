@@ -232,5 +232,8 @@
   },
   "[fsharp]": {
     "editor.defaultFormatter": "Ionide.Ionide-fsharp"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer"
   }
 }
