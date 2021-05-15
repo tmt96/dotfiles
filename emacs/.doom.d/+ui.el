@@ -29,7 +29,7 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq +ui/font-face (cond (IS-WINDOWS "Cascadia Code")
                           (IS-MAC "Menlo for Powerline")
-                            (t "monospace")))
+                          (t "monospace")))
 (setq doom-font (font-spec :family  +ui/font-face :size 14 :weight 'light))
 (setq line-spacing 0.5)
 
