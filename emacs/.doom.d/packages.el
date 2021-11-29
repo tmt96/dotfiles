@@ -50,7 +50,6 @@
 ;(unpin! t)
 
 (package! leuven-theme)
-(package! modus-operandi-theme)
 
 ;; org packages
 (when (featurep! :lang org +super-agenda)

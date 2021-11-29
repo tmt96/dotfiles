@@ -193,4 +193,3 @@ m       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (default +bindings +smartparens))
 
 (scroll-bar-mode)
-(toggle-frame-maximized)
