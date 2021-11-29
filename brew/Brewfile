@@ -9,14 +9,11 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "mistertea/et"
 tap "nodenv/nodenv"
+tap "railwaycat/emacsmacport"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Command-line interface for SQLite
-brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
@@ -31,8 +28,6 @@ brew "curl"
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU compiler collection
-brew "gcc"
 # Distributed revision control system
 brew "git"
 # Command-driven, interactive function plotting
@@ -65,6 +60,8 @@ brew "nodenv"
 brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Object-relational database system
 brew "postgresql"
 # Python version management
@@ -85,7 +82,7 @@ brew "rbenv-default-gems"
 brew "ripgrep"
 # User interface to the TELNET protocol
 brew "telnet"
-# Programatically correct mistyped console commands
+# Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
 brew "tldr"
@@ -103,7 +100,6 @@ brew "z"
 brew "zsh"
 # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
 brew "clementtsang/bottom/bottom"
-brew "d12frosted/emacs-plus/emacs-plus@27"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Remote terminal with IP roaming
@@ -118,15 +114,24 @@ brew "nodenv/nodenv/nodenv-npm-migrate"
 brew "nodenv/nodenv/nodenv-package-rehash"
 # Update nodenv plugins not installed with Homebrew
 brew "nodenv/nodenv/nodenv-update"
+# YAMAMOTO Mitsuharu's Mac port of GNU Emacs
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-natural-title-bar", "with-starter"]
+# View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
+# Application launcher and productivity software
 cask "alfred"
-cask "android-platform-tools"
+# Menu bar icon organizer
 cask "bartender"
+# E-books management software
+cask "calibre"
+# API documentation browser and code snippet manager
 cask "dash"
+# Developer platform
 cask "dotnet-sdk"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
+# Web browser
 cask "firefox"
-cask "flash-player"
 cask "font-anonymice-powerline"
 cask "font-consolas-for-powerline"
 cask "font-dejavu-sans-mono-for-powerline"
@@ -143,35 +148,50 @@ cask "font-noto-mono-for-powerline"
 cask "font-roboto-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
-cask "free-download-manager"
-cask "google-backup-and-sync"
+# Web browser
 cask "google-chrome"
+# Free and open-source media player
 cask "iina"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Menu bar calendar
 cask "itsycal"
 cask "java"
+# JetBrains tools manager
 cask "jetbrains-toolbox"
+# Keyboard customizer
 cask "karabiner-elements"
+# File archiver
 cask "keka"
+# Free and open-source painting and sketching program
 cask "krita"
+# Full TeX Live distribution with GUI applications
 cask "mactex"
+# Warns about malware, adware and spyware
 cask "malwarebytes"
-cask "mathpix-snipping-tool"
+# Minimal installer for conda
 cask "miniconda"
-cask "mono-mdk"
-cask "ngrok"
-cask "pomodone"
+# Tool to control external monitor brightness & volume
+cask "monitorcontrol"
+# Command-line shell and scripting language
 cask "powershell"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Tool to reverse the direction of scrolling
 cask "scroll-reverser"
 cask "sensiblesidebuttons"
+# Virtual reality content platform
 cask "sidequest"
+# Video chat, voice call and instant messaging application
 cask "skype"
+# Music streaming service
 cask "spotify"
+# Text editor for code, markup and prose
 cask "sublime-text"
-cask "virtualbox"
-cask "virtualbox-extension-pack"
+# Open-source code editor
 cask "visual-studio-code"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
@@ -179,10 +199,8 @@ mas "Irvue", id: 1039633667
 mas "Keynote", id: 409183694
 mas "LastPass", id: 926036361
 mas "Messenger", id: 1480068668
-mas "Microsoft To Do", id: 1274495053
 mas "Numbers", id: 409203825
 mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
-mas "PhotoScape X", id: 929507092
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
