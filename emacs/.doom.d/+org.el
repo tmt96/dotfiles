@@ -9,6 +9,7 @@
          org-checklist
          org-habit
          org-id
+         org-inlinetask
          org-protocol))
 
 (when (featurep! :lang org +roam)
@@ -69,9 +70,13 @@
 
 ;; journal
 (use-package! org-journal
+  :defer
   :when (featurep! :lang org +journal)
+  :defer 1
   :init
   (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-carryover-items "TODO=\"TASK\"|TODO=\"HOLD\"|TODO=\"EVAL\"|TODO=\"MEET\"|TODO=\"NEXT\"|TODO=\"PROG\"|TODO=\"WAIT\"")
   :custom
   (org-journal-file-format "%Y/%m-%d.org")
   (org-journal-date-format "%A, %b %d")
@@ -79,7 +84,6 @@
   (org-journal-file-type 'weekly)
   (org-journal-file-header "#+TITLE: %m-%d Weekly Journal\n#+SETUPFILE: ~/org/master.org\n")
   (org-journal-enable-agenda-integration t)
-  (org-journal-carryover-items "TODO=\"TASK\"|TODO=\"HOLD\"|TODO=\"EVAL\"|TODO=\"MEET\"|TODO=\"NEXT\"|TODO=\"PROG\"|TODO=\"WAIT\"")
   )
 
 ;; agenda format
@@ -90,7 +94,7 @@
   (org-super-agenda-mode)
   :custom
   (org-super-agenda-groups
-   '((:name "Schedule"
+   `((:name "Schedule"
       :time-grid t)
      (:name "Habits"
       :habit t)
@@ -104,14 +108,21 @@
       :priority "A")
      (:name "In-progress"
       :todo "PROG")
-     (:name "Meeting"
-      :todo "MEET")
      (:name "Next"
       :todo "NEXT")
+     (:name "Meeting"
+      :todo "MEET")
      (:name "Evaluating"
       :todo "EVAL")
+     (:name "Coming up"
+      :not (:category "career_growth"
+            :scheduled future
+            :deadline (after ,(org-read-date nil nil "+3d"))))
      (:name "Not yet filed"
       :todo "TASK")
+     (:name "Unscheduled"
+      :and (:scheduled nil :deadline nil
+            :not (:category "career_growth")))
      (:name "Career Task Behind"
       :todo ("NOT_STARTED" "BEHIND") :order 1)
      (:name "Career"
@@ -121,29 +132,32 @@
 ;; bullet formatting
 (use-package! org-superstar
   :when (featurep! :lang org +pretty)
+  :after org
   :custom
   (org-superstar-item-bullet-alist
    '((?+ . ?•)
-     (?* . ?▪)
+     (?* . ?❅)
      (?- . ?➤)))
   (org-superstar-todo-bullet-alist nil)
   )
 
 ;; notification
 (use-package! org-wild-notifier
-  :when (featurep! :lang org +notify)
+  :when (and IS-MAC (featurep! :lang org +notify))
   :after org
   :config
   (org-wild-notifier-mode)
   :custom
   (org-wild-notifier-keyword-blacklist '("DONE" "PASS" "DROP"))
-  (alert-default-style 'osx-notifier)
+  (alert-default-style (cond (IS-MAC 'osx-notifier) (t 'notifications)))
   )
 
 (use-package! org-roam
   :when (featurep! :lang org +roam)
+  :after org
   :custom
   (org-roam-graph-executable (executable-find "neato"))
+  (+org-roam-open-buffer-on-find-file nil)
   )
 
 (use-package! org-pomodoro

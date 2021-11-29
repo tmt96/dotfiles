@@ -20,8 +20,6 @@ brew "clang-format"
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Configurable talking characters in ASCII art
-brew "cowsay"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Simple, fast and user-friendly alternative to find
