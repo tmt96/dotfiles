@@ -44,7 +44,6 @@
   "terminal.integrated.scrollback": 5000,
   "window.autoDetectHighContrast": false,
   "window.titleBarStyle": "custom",
-  "window.autoDetectHighContrast": false,
   "workbench.activityBar.visible": true,
   "workbench.commandPalette.preserveInput": true,
   "workbench.colorTheme": "One Dark Pro",
@@ -59,8 +58,6 @@
   /**********************************************
    * Extensions Settings
    ***********************************************/
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": true,
   "C_Cpp.clang_format_style": "Google",
   "csharp.referencesCodeLens.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,

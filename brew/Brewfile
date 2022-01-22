@@ -1,5 +1,3 @@
-tap "clementtsang/bottom"
-tap "d12frosted/emacs-plus"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -14,6 +12,8 @@ tap "railwaycat/emacsmacport"
 brew "automake"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
+brew "bottom"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
@@ -96,8 +96,6 @@ brew "yarn"
 brew "z"
 # UNIX shell (command interpreter)
 brew "zsh"
-# A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
-brew "clementtsang/bottom/bottom"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Remote terminal with IP roaming
@@ -154,7 +152,6 @@ cask "iina"
 cask "iterm2"
 # Menu bar calendar
 cask "itsycal"
-cask "java"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Keyboard customizer
