@@ -24,6 +24,7 @@
    org-list-demote-modify-bullet
    '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
    org-id-link-to-org-use-id t
+   org-pretty-entities t
 
    ;; todo settings
    org-todo-keywords
@@ -152,14 +153,28 @@
   (alert-default-style (cond (IS-MAC 'osx-notifier) (t 'notifications)))
   )
 
+;; roam
 (use-package! org-roam
-  :when (featurep! :lang org +roam)
+  :when (featurep! :lang org +roam2)
   :after org
   :custom
   (org-roam-graph-executable (executable-find "neato"))
   (+org-roam-open-buffer-on-find-file nil)
   )
 
+;; noter
+(use-package! org-pdftools
+  :when (featurep! :lang org +noter)
+  :after org
+  :hook (org-mode . org-pdftools-setup-link)
+  )
+
+(use-package! org-noter-pdftools
+  :when (featurep! :lang org +noter)
+  :after org-noter
+  )
+
+;; pomodoro
 (use-package! org-pomodoro
   :when (featurep! :lang org +pomodoro)
   :after org

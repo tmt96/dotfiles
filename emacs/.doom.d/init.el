@@ -98,7 +98,7 @@
        (:if (not IS-WINDOWS) magit)             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
-       ;;pdf               ; pdf enhancements
+       pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
@@ -150,10 +150,10 @@
        (org
         +dragandrop
         +journal
+        +noter
         +pandoc
-        +pomodoro
         +pretty
-        +roam
+        +roam2
         +super-agenda
         +notify
         +bigheadings)      ; organize your plain life in plain text
