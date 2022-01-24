@@ -27,7 +27,7 @@ echo "Installing your apps using Brewfile..."
 brew update > /dev/null 2>&1
 brew bundle --file=$dir_name/Brewfile
 
-echo "Linking your shell config files..."
+echo "Linking your Brewfile..."
 backup_and_link $dir_name/Brewfile ${HOME}/Brewfile
 
 echo "Done installing apps from Homebrew!!"
