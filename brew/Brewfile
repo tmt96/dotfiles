@@ -1,3 +1,4 @@
+tap "adoptopenjdk/openjdk"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -12,7 +13,7 @@ tap "railwaycat/emacsmacport"
 brew "automake"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
+# Yet another cross-platform graphical process/system monitor
 brew "bottom"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
@@ -78,6 +79,8 @@ brew "rbenv"
 brew "rbenv-default-gems"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Version control system designed to be a better CVS
+brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
 # Programmatically correct mistyped console commands
@@ -146,6 +149,8 @@ cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Free and open-source media player
 cask "iina"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -168,6 +173,8 @@ cask "malwarebytes"
 cask "miniconda"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Simple Gtk# Paint Program
+cask "pinta"
 # Command-line shell and scripting language
 cask "powershell"
 # Move and resize windows using keyboard shortcuts or snap areas
