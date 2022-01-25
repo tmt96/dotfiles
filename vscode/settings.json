@@ -26,6 +26,7 @@
   "explorer.decorations.colors": false,
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "off",
+  "editor.bracketPairColorization.enabled": true,
   "files.associations": {
     "*.erb": "erb"
   },
@@ -44,6 +45,7 @@
   "terminal.integrated.scrollback": 5000,
   "window.titleBarStyle": "custom",
   "window.autoDetectHighContrast": false,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   "workbench.commandPalette.preserveInput": true,
   "workbench.colorTheme": "One Dark Pro",
@@ -57,8 +59,6 @@
   /**********************************************
    * Extensions Settings
    ***********************************************/
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": true,
   "C_Cpp.clang_format_style": "Google",
   "csharp.referencesCodeLens.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,
@@ -83,11 +83,7 @@
     "suppressFileNotUnderSourceControlWarning": false,
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressUpdateNotice": true,
-    "suppressWelcomeNotice": false
+    "suppressNoRepositoryWarning": false
   },
   "gitlens.keymap": "chorded",
   "gitlens.showWhatsNewAfterUpgrades": false,
@@ -96,7 +92,6 @@
   "gitlens.views.fileHistory.location": "scm",
   "gitlens.views.lineHistory.location": "scm",
   "gitlens.views.repositories.avatars": true,
-  "gitlens.views.repositories.enabled": true,
   "gitlens.views.repositories.files.layout": "auto",
   "gitlens.views.repositories.location": "scm",
   "gitlens.views.search.avatars": true,
@@ -184,7 +179,7 @@
   "powershell.integratedConsole.showOnStartup": false,
   "python.condaPath": "usr/local/Caskroom/miniconda/base/condabin/conda",
   "python.formatting.provider": "black",
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "python.linting.flake8Args": ["--max-complexity=6"],
   "rest-client.enableTelemetry": true,
   "ruby.format": false,

@@ -24,6 +24,7 @@
    org-list-demote-modify-bullet
    '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
    org-id-link-to-org-use-id t
+   org-blank-before-new-entry '((heading . t) (plain-list-item . auto))
 
    ;; todo settings
    org-todo-keywords
@@ -103,12 +104,12 @@
       :deadline today)
      (:name "Overdue"
       :deadline past)
-     (:name "Important"
-      :priority "A")
      (:name "In-progress"
       :todo "PROG")
      (:name "Next"
       :todo "NEXT")
+     (:name "Important"
+      :priority "A")
      (:name "Meeting"
       :todo "MEET")
      (:name "Evaluating"

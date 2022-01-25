@@ -59,9 +59,14 @@
     :desc "Next journal entry"          "f"     #'org-journal-next-entry
     ))
   (:when (featurep! :lang org +pomodoro)
-   (:prefix "p"
+   (:prefix ("p" . "pomodoro")
     "p"         #'org-pomodoro
     "e"         #'org-pomodoro-extend-last-clock))
+  (:when (featurep! :lang org +sidebar)
+   (:prefix ("b" . "sidebar")
+    :desc "Toggle sidebar"              "s"     #'org-sidebar-toggle
+    :desc "Toggle sidebar tree"         "t"     #'org-sidebar-tree-toggle
+    :desc "Toggle agenda sidebar"       "a"     #'+org-sidebar-toggle-agenda))
   )
 
  :localleader

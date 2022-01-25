@@ -50,7 +50,6 @@
 ;(unpin! t)
 
 (package! leuven-theme)
-(package! modus-operandi-theme)
 
 ;; org packages
 (when (featurep! :lang org +super-agenda)
@@ -58,6 +57,9 @@
   )
 (when (featurep! :lang org +notify)
   (package! org-wild-notifier)
+  )
+(when (featurep! :lang org +sidebar)
+  (package! org-sidebar)
   )
 
 ;; ui fixes
