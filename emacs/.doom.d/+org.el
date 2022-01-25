@@ -25,6 +25,7 @@
    '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
    org-id-link-to-org-use-id t
    org-blank-before-new-entry '((heading . t) (plain-list-item . auto))
+   org-pretty-entities t
 
    ;; todo settings
    org-todo-keywords
@@ -73,6 +74,7 @@
 (use-package! org-journal
   :defer
   :when (featurep! :lang org +journal)
+  :defer 1
   :init
   (setq org-journal-prefix-key "C-c j ")
   :config
@@ -132,6 +134,7 @@
 ;; bullet formatting
 (use-package! org-superstar
   :when (featurep! :lang org +pretty)
+  :after org
   :custom
   (org-superstar-item-bullet-alist
    '((?+ . ?•)
@@ -142,22 +145,37 @@
 
 ;; notification
 (use-package! org-wild-notifier
-  :when (featurep! :lang org +notify)
+  :when (and IS-MAC (featurep! :lang org +notify))
   :after org
   :config
   (org-wild-notifier-mode)
   :custom
   (org-wild-notifier-keyword-blacklist '("DONE" "PASS" "DROP"))
-  (alert-default-style 'osx-notifier)
+  (alert-default-style (cond (IS-MAC 'osx-notifier) (t 'notifications)))
   )
 
+;; roam
 (use-package! org-roam
-  :when (featurep! :lang org +roam)
+  :when (featurep! :lang org +roam2)
+  :after org
   :custom
   (org-roam-graph-executable (executable-find "neato"))
   (+org-roam-open-buffer-on-find-file nil)
   )
 
+;; noter
+(use-package! org-pdftools
+  :when (featurep! :lang org +noter)
+  :after org
+  :hook (org-mode . org-pdftools-setup-link)
+  )
+
+(use-package! org-noter-pdftools
+  :when (featurep! :lang org +noter)
+  :after org-noter
+  )
+
+;; pomodoro
 (use-package! org-pomodoro
   :when (featurep! :lang org +pomodoro)
   :after org
