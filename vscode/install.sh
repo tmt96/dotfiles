@@ -5,10 +5,10 @@ source $dir_name/../function.sh
 
 echo
 echo "Configuring VSCode..."
-echo "Installing your extensions"
-for line in $(cat "./vscode/extensions"); do
-    code --install-extension $line > /dev/null
-done
+# echo "Installing your extensions"
+# for line in $(cat "./vscode/extensions"); do
+#     code --install-extension $line > /dev/null
+# done
 
 echo "Configure settings & keybindings"
 dest_dir=${HOME}/Library/Application\ Support/Code/User
