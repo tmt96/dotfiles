@@ -19,9 +19,9 @@ fi
 echo "Symlinking spacemacs config..."
 backup_and_link $dir_name/.spacemacs ${HOME}/.spacemacs
 
-if [ ! -d ${HOME}/doom-emacs ]; then
+if [ ! -d ${HOME}/doomemacs ]; then
     echo "You don't have an Doom Emacs config. Cloning Doom Emacs..."
-    git clone https://github.com/hlissner/doom-emacs ${HOME}/doom-emacs
+    git clone https://github.com/doomemacs/doomemacs ${HOME}/doomemacs
 else
     yes | ${HOME}/doom-emacs/bin/doom upgrade
 fi
@@ -31,9 +31,8 @@ backup_and_link $dir_name/.doom.d ${HOME}/.doom.d
 ${HOME}/doom-emacs/bin/doom install -y
 
 echo "Installing chemacs & configuring profiles"
-wget -O ~/.emacs https://raw.githubusercontent.com/plexus/chemacs/master/.emacs
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 backup_and_link $dir_name/.emacs-profiles.el $HOME/.emacs-profiles.el
-ln -sfn ${HOME}/doom-emacs ${HOME}/.emacs.d
 
 # TODO: Configure emacs daemon & client
 echo "Configure emacs daemon..."

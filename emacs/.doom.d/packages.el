@@ -49,8 +49,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! leuven-theme)
-
 ;; org packages
 (when (featurep! :lang org +super-agenda)
   (package! org-super-agenda)

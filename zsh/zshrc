@@ -7,11 +7,21 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 zstyle :compinstall filename '${HOME}/.zshrc'
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 autoload -Uz compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+unalias sl
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # init jenv
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -24,14 +34,10 @@ _dotnet_zsh_complete() {
 }
 compctl -K _dotnet_zsh_complete dotnet
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+source $HOMEBREW_PREFIX/Caskroom/miniconda/base/etc/profile.d/conda.sh
 
 # init thefuck
 [[ -f ~/.fuck.zsh ]] && source "${HOME}/.fuck.zsh"
+
+# init zoxide
+[[ -f ~/.zoxide.zsh ]] && source "${HOME}/.zoxide.zsh"

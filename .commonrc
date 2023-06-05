@@ -16,10 +16,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export PATH="$HOMEBREW_PREFIX/opt/curl/bin:$PATH"
-export PATH="$HOME/doom-emacs/bin:$PATH"
-
-source $HOMEBREW_PREFIX/Caskroom/miniconda/base/etc/profile.d/conda.sh
-source $HOMEBREW_PREFIX/etc/profile.d/z.sh
+export PATH="$HOME/doomemacs/bin:$PATH"
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).

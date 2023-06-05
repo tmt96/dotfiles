@@ -41,8 +41,30 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.useWslProfiles": false,
+  "terminal.integrated.scrollback": 20000,
   "window.autoDetectHighContrast": false,
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 1,
@@ -51,16 +73,38 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.showTabs": false,
   "workbench.editor.tabSizing": "shrink",
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview"
+  },
+  "workbench.editor.titleScrollbarSizing": "large",
   "workbench.iconTheme": "vscode-icons",
   "workbench.preferredHighContrastColorTheme": "Community Material Theme Darker High Contrast",
-  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": true,
-
   /**********************************************
    * Extensions Settings
    ***********************************************/
-  "C_Cpp.clang_format_style": "Google",
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascriptreact",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "auto-close-tag.SublimeText3Mode": true,
+  "azureResourceGroups.groupBy": "resourceGroup",
   "csharp.referencesCodeLens.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,
   "cSpell.enabledLanguageIds": [
@@ -78,6 +122,7 @@
   "FSharp.enableTreeView": true,
   "FSharp.fsacRuntime": "netcore",
   "git.autofetch": true,
+  "git.ignoreLegacyWarning": true,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -118,7 +163,7 @@
     "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
   ],
   "metaGo.decoration.fontSize": 13,
-  "oneDarkPro.editorTheme": "vscode",
+  "oneDarkPro.editorTheme": "One Dark Pro Flat",
   "oneDarkPro.vivid": true,
   "oneDarkPro.bold": true,
   "openInGitHub.providerType": "github",
@@ -179,9 +224,24 @@
   "powershell.startAutomatically": false,
   "powershell.integratedConsole.showOnStartup": false,
   "python.condaPath": "usr/local/Caskroom/miniconda/base/condabin/conda",
+  "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
   "python.languageServer": "Default",
-  "python.linting.flake8Args": ["--max-complexity=6"],
+  "python.linting.flake8Args": [
+    "--max-complexity=6",
+    "--max-line-length=88",
+    "--extend-ignore=E501"
+  ],
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.remotePlatform": {
+    "hpc": "linux",
+    "coc-ice.pace.gatech.edu": "linux",
+    "ubuntu-20.04": "linux",
+    "gcloud": "linux",
+    "instance-1.us-west1-b.white-academy-352605": "linux",
+    "pr1-vm": "linux",
+    "pr1-vm-focal": "linux"
+  },
   "rest-client.enableTelemetry": true,
   "ruby.format": false,
   "ruby.lint": {
@@ -230,6 +290,139 @@
     "editor.defaultFormatter": "Ionide.Ionide-fsharp"
   },
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
-  }
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "C_Cpp.autocomplete": "Disabled",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "C_Cpp.intelliSenseEngineFallback": "enabled",
+  "cmake.configureOnOpen": true,
+  "clangd.onConfigChanged": "restart",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "latexmk_rconly",
+      "command": "latexmk",
+      "args": ["%DOC%"],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"],
+      "env": {}
+    },
+    {
+      "name": "rnw2tex",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2tex",
+      "command": "julia",
+      "args": ["-e", "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"],
+      "env": {}
+    },
+    {
+      "name": "jnw2texminted",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pnw2tex",
+      "command": "pweave",
+      "args": ["-f", "tex", "%DOC_EXT%"],
+      "env": {}
+    },
+    {
+      "name": "pnw2texminted",
+      "command": "pweave",
+      "args": ["-f", "texminted", "%DOC_EXT%"],
+      "env": {}
+    },
+    {
+      "name": "tectonic",
+      "command": "tectonic",
+      "args": ["--synctex", "--keep-logs", "%DOC%.tex"],
+      "env": {}
+    }
+  ]
 }
