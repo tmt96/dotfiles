@@ -12,7 +12,7 @@
   )
 
  ;; swiper is love swiper is life
- (:when (featurep! :completion ivy)
+ (:when (modulep! :completion ivy)
   "C-s"         #'swiper
   "C-r"         #'swiper-backward
   )
@@ -52,17 +52,17 @@
  :leader
  ;; for "notes", i.e org-mode
  (:prefix "n"
-  (:when (featurep! :lang org +journal)
+  (:when (modulep! :lang org +journal)
    (:prefix "j"
     :desc "Current journal file"        "c"     #'org-journal-open-current-journal-file
     :desc "Previous journal entry"      "b"     #'org-journal-previous-entry
     :desc "Next journal entry"          "f"     #'org-journal-next-entry
     ))
-  (:when (featurep! :lang org +pomodoro)
+  (:when (modulep! :lang org +pomodoro)
    (:prefix ("p" . "pomodoro")
     "p"         #'org-pomodoro
     "e"         #'org-pomodoro-extend-last-clock))
-  (:when (featurep! :lang org +sidebar)
+  (:when (modulep! :lang org +sidebar)
    (:prefix ("b" . "sidebar")
     :desc "Toggle sidebar"              "s"     #'org-sidebar-toggle
     :desc "Toggle sidebar tree"         "t"     #'org-sidebar-tree-toggle

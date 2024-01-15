@@ -98,7 +98,7 @@
        (:if (not IS-WINDOWS) magit)             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
-       pdf               ; pdf enhancements
+       ;;pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
@@ -152,12 +152,12 @@
         +journal
         +noter
         +pandoc
-        +pretty
         +roam2
         +super-agenda
         +notify
         +bigheadings
-        +sidebar)
+        +sidebar
+        +modern)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional

@@ -12,20 +12,18 @@
          org-inlinetask
          org-protocol))
 
-(when (featurep! :lang org +roam)
-  (setq org-roam-directory org-directory)
-)
-
 (after! org
   (setq
    ;; ui & ux fixes
-   org-tags-column -90
+   org-auto-align-tags nil
+   org-tags-column 0
    org-ellipsis " ▼"
    org-list-demote-modify-bullet
    '(("-" . "+") ("+" . "*") ("*" . "-") ("A." . "1.") ("1." . "a."))
    org-id-link-to-org-use-id t
    org-blank-before-new-entry '((heading . t) (plain-list-item . auto))
    org-pretty-entities t
+   org-hide-emphasis-markers t
 
    ;; todo settings
    org-todo-keywords
@@ -52,6 +50,7 @@
    org-agenda-files (directory-files-recursively org-directory "\\.org$")
    org-agenda-skip-scheduled-if-deadline-is-shown t
    org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled
+   org-agenda-tags-column 0
    org-agenda-prefix-format
     (quote
      ((agenda . "%-24c%?-12t% s")
@@ -60,7 +59,7 @@
       (tags . "%-12c")
       (search . "%-12c")))
    )
-  (when (featurep! :lang org +bigheadings)
+  (when (modulep! :lang org +bigheadings)
     (custom-set-faces!
       '(org-document-title :height 1.3)
       '(org-level-1 :inherit outline-1 :height 1.2)
@@ -73,8 +72,9 @@
 ;; journal
 (use-package! org-journal
   :defer
-  :when (featurep! :lang org +journal)
+  :when (modulep! :lang org +journal)
   :defer 1
+  :after org
   :init
   (setq org-journal-prefix-key "C-c j ")
   :config
@@ -90,7 +90,7 @@
 
 ;; agenda format
 (use-package! org-super-agenda
-  :when (featurep! :lang org +super-agenda)
+  :when (modulep! :lang org +super-agenda)
   :after org-agenda
   :config
   (org-super-agenda-mode)
@@ -133,7 +133,7 @@
 
 ;; bullet formatting
 (use-package! org-superstar
-  :when (featurep! :lang org +pretty)
+  :when (modulep! :lang org +pretty)
   :after org
   :custom
   (org-superstar-item-bullet-alist
@@ -143,9 +143,20 @@
   (org-superstar-todo-bullet-alist nil)
   )
 
+(use-package! org-modern
+  :when (modulep! :lang org +modern)
+  :hook (org-mode . global-org-modern-mode)
+  :custom
+  (org-modern-priority
+   `((?A . ,(propertize "⚑" 'face 'error))
+     (?B . ,(propertize "⬆" 'face 'warning))
+     (?C . ,(propertize "■" 'face 'success))))
+  :custom-face (org-modern-label ((t :inherit default :height 1.0)))
+  )
+
 ;; notification
 (use-package! org-wild-notifier
-  :when (and IS-MAC (featurep! :lang org +notify))
+  :when (and IS-MAC (modulep! :lang org +notify))
   :after org
   :config
   (org-wild-notifier-mode)
@@ -156,28 +167,22 @@
 
 ;; roam
 (use-package! org-roam
-  :when (featurep! :lang org +roam2)
+  :when (modulep! :lang org +roam2)
   :after org
   :custom
   (org-roam-graph-executable (executable-find "neato"))
   (+org-roam-open-buffer-on-find-file nil)
-  )
-
-;; noter
-(use-package! org-pdftools
-  :when (featurep! :lang org +noter)
-  :after org
-  :hook (org-mode . org-pdftools-setup-link)
+  (org-roam-directory org-directory)
   )
 
 (use-package! org-noter-pdftools
-  :when (featurep! :lang org +noter)
+  :when (modulep! :lang org +noter)
   :after org-noter
   )
 
 ;; pomodoro
 (use-package! org-pomodoro
-  :when (featurep! :lang org +pomodoro)
+  :when (modulep! :lang org +pomodoro)
   :after org
   :custom
   (org-pomodoro-manual-break t)

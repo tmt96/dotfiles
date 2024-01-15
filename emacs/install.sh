@@ -13,7 +13,7 @@ if [ ! -d ${HOME}/spacemacs ]; then
     git clone --branch develop https://github.com/syl20bnr/spacemacs ${HOME}/spacemacs
 else
     git --git-dir=${HOME}/spacemacs/.git checkout develop
-    git --git-dir=${HOME}/spacemacs/.git pull --abort
+    git --git-dir=${HOME}/spacemacs/.git pull
 fi
 
 echo "Symlinking spacemacs config..."
@@ -28,7 +28,7 @@ fi
 
 echo "Symlinking Doom emacs config..."
 backup_and_link $dir_name/.doom.d ${HOME}/.doom.d
-${HOME}/doom-emacs/bin/doom install -y
+yes | ${HOME}/doomemacs/bin/doom install
 
 echo "Installing chemacs & configuring profiles"
 git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
@@ -36,8 +36,8 @@ backup_and_link $dir_name/.emacs-profiles.el $HOME/.emacs-profiles.el
 
 # TODO: Configure emacs daemon & client
 echo "Configure emacs daemon..."
-ln -sfn $dir_name/emacs.daemon.plist ${HOME}/Library/LaunchAgents/org.gnu.emacs.daemon.plist
-launchctl load ${HOME}/Library/LaunchAgents/org.gnu.emacs.daemon.plist
+ln -sfn $dir_name/emacs.daemon.plist ${HOME}/Library/LaunchAgents/gnu.emacs.daemon.plist
+launchctl load ${HOME}/Library/LaunchAgents/gnu.emacs.daemon.plist
 
 echo "Done configuring emacs!!"
 echo

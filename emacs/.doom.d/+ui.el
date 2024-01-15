@@ -30,8 +30,9 @@
 (setq +ui/font-face (cond (IS-WINDOWS "Cascadia Code")
                           (IS-MAC "Menlo for Powerline")
                           (t "monospace")))
-(setq doom-font (font-spec :family  +ui/font-face :size 14 :weight 'light))
-(setq line-spacing 0.5)
+(setq doom-font (font-spec :family "Iosevka" :size 14)
+      doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 14))
+(setq line-spacing 0.4)
 
 ;; Nice icons in modeline
 (use-package! doom-modeline
@@ -41,7 +42,7 @@
 
 ;; Icons in treemacs
 (use-package! treemacs-all-the-icons
-  :when (featurep! :ui treemacs +icons)
+  :when (modulep! :ui treemacs +icons)
   :defer t
   :config
   (treemacs-load-theme '"all-the-icons"))
