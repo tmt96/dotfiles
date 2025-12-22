@@ -20,16 +20,16 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'completion' \
+  'git'\
   'emacs'\
   'osx' \
   'tmux'\
-  'git' \
-  'node' \
-  'python'\
+  'completion' \
   'syntax-highlighting' \
   'autosuggestions' \
   'prompt'
+#  'node' \
+#  'python'\
 
 
 zstyle ':prezto:module:prompt' theme powerlevel10k

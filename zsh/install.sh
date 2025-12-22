@@ -42,7 +42,6 @@ test -f ${HOME}/.fuck.zsh || touch ${HOME}/.fuck.zsh
 SHELL=zsh thefuck --alias >> ${HOME}/.fuck.zsh
 
 echo "Configure zoxide for zsh"
-echo "Configure thefuck for zsh"
 test -f ${HOME}/.zoxide.zsh || touch ${HOME}/.zoxide.zsh
 zoxide init zsh >> ${HOME}/.zoxide.zsh
 
