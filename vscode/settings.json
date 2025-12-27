@@ -469,5 +469,6 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.codesearch.enabled": true,
   "geminicodeassist.rules": "\n\n",
-  "chat.mcp.gallery.enabled": true
+  "chat.mcp.gallery.enabled": true,
+  "geminicodeassist.project": "studious-highway-tj651"
 }

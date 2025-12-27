@@ -1,24 +1,20 @@
-tap "aviator-co/tap"
-tap "ejoffe/tap"
-tap "hashicorp/tap"
+tap "d12frosted/emacs-plus"
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "jimeh/emacs-builds"
 tap "mistertea/et"
 tap "nodenv/nodenv"
+tap "oven-sh/bun"
 tap "railwaycat/emacsmacport"
+tap "sst/tap"
 tap "withgraphite/tap"
-# Library for manipulating PNG images
-brew "libpng"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # New file format for still image compression
 brew "jpeg-xl"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Companion library to apr, the Apache Portable Runtime library
 brew "apr-util"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -27,66 +23,38 @@ brew "automake"
 brew "bash"
 # Yet another cross-platform graphical process/system monitor
 brew "bottom"
-# Format bazel BUILD files with a standard convention
-brew "buildifier"
-# Software library to render fonts
-brew "freetype"
-# Core application library for C
-brew "glib"
-# Vector graphics library with cross-device output support
-brew "cairo"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Suite of command-line tools for converting to and working with CSV
-brew "csvkit"
-# Reimplementation of ctags(1)
-brew "ctags"
 # C library implementing the SSH2 protocol
 brew "libssh2"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Internet file retriever
+brew "wget"
+# Search API docs offline, in your terminal or browser
+brew "dasht"
 # Isolated development environments using Docker
 brew "docker-compose"
-# Collection of reusable C++ library artifacts developed at Facebook
-brew "folly"
-# C++14 implementation of the TLS-1.3 standard
-brew "fizz"
-# Modular, composable client/server abstractions framework
-brew "wangle"
-# Facebook's branch of Apache Thrift, including a new C++ server
-brew "fbthrift"
-# Thrift functions for querying information from a service
-brew "fb303"
-# Shared library for Watchman and Eden projects
-brew "edencommon"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Terminal JSON viewer
 brew "fx"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Library for encoding and decoding .avif files
-brew "libavif"
-# Graphics library to dynamically manipulate images
-brew "gd"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # OpenType text shaping engine
 brew "harfbuzz"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# OCR (Optical Character Recognition) engine
-brew "tesseract"
-# Interpreter for PostScript and PDF
-brew "ghostscript"
 # Distributed revision control system
 brew "git"
-# Automatic git commit --fixup
-brew "git-absorb"
 # High-velocity, monorepo-scale workflow for Git
 brew "git-branchless"
 # Git extension for versioning large files
@@ -105,14 +73,8 @@ brew "qt"
 brew "gnuplot"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
-# Apply a diff file to an original
-brew "gpatch"
 # Library access to GnuPG
 brew "gpgme"
-# Image manipulation
-brew "netpbm"
-# GNU triangulated surface library
-brew "gts"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
@@ -133,44 +95,28 @@ brew "jpeg"
 brew "jq"
 # Domain specific configuration language for defining JSON data
 brew "jsonnet"
-# Portable Foreign Function Interface library
-brew "libffi"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
-# GNOME XML library
-brew "libxml2"
 # Mac App Store command-line interface
 brew "mas"
-# Development kit for the Java programming language
-brew "openjdk"
 # Java-based project management
 brew "maven"
-# Minimalist GNU for Windows and GCC cross-compilers
-brew "mingw-w64"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
-# QUIC transport protocol implementation
-brew "mvfst"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Install NodeJS versions
 brew "node-build"
 # Node.js version manager
 brew "nodenv"
-# Development kit for the Java programming language
-brew "openjdk@21"
-# Open source distributed and RESTful search engine
-brew "opensearch"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Python dependency management tool
-brew "pipenv"
-# Optimizer for PNG files
-brew "pngcrush"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Python package management tool
+brew "poetry"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
@@ -181,10 +127,8 @@ brew "pyenv"
 brew "pyenv-pip-migrate"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+# Integrate pyenv and system commands
+brew "pyenv-which-ext"
 # Cross-platform application and UI framework
 brew "qt@5"
 # Install various Ruby versions and implementations
@@ -199,37 +143,24 @@ brew "ripgrep"
 brew "rust"
 # Source control client
 brew "sapling"
-# Version control system designed to be a better CVS
-brew "subversion"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # User interface to the TELNET protocol
 brew "telnet"
-# Linter for Terraform files
-brew "tflint"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Markup-based typesetting system
-brew "typst"
-# Watch files and take action when they change
-brew "watchman"
-# Internet file retriever
-brew "wget"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # JavaScript package manager
 brew "yarn"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-brew "aviator-co/tap/av"
-# Packer
-brew "hashicorp/tap/packer"
 # Fix IntelliJ/WebStorm's npm integration under nodenv
 brew "nodenv/nodenv/jetbrains-npm"
 # Install a set of npm packages every time you install a new version of Node
@@ -240,14 +171,20 @@ brew "nodenv/nodenv/nodenv-npm-migrate"
 brew "nodenv/nodenv/nodenv-package-rehash"
 # Update nodenv and installed plugins
 brew "nodenv/nodenv/nodenv-update"
+# The AI coding agent built for the terminal.
+brew "sst/tap/opencode"
 # Allows you to manage your stacked changes and submit them for review on GitHub
 brew "withgraphite/tap/graphite"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
 # Application launcher and productivity software
 cask "alfred"
+# Private desktop AI chat application
+cask "anythingllm"
 # Display management tool
 cask "betterdisplay"
 # Anthropic's official Claude AI desktop app
@@ -266,8 +203,6 @@ cask "docker-desktop"
 cask "dotnet-sdk"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
-# GNU Emacs text editor
-cask "emacs-app"
 # Web browser
 cask "firefox"
 cask "font-anonymice-powerline"
@@ -290,8 +225,8 @@ cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# Desktop client for GitHub repositories
-cask "github"
+# Web browser
+cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Free and open-source media player
@@ -314,10 +249,12 @@ cask "krita"
 cask "logi-options+"
 # Screen and video recording software
 cask "loom"
+# Cable-free audio router
+cask "loopback"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
-# Multi-platform web browser
-cask "microsoft-edge"
+# Scan and remove malware, spyware, and viruses
+cask "malwarebytes"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Minimal installer for conda
@@ -332,10 +269,8 @@ cask "powershell"
 cask "rectangle"
 # Tool to reverse the direction of scrolling
 cask "scroll-reverser"
-# StrongDM client
-cask "sdm"
-# Command-line client for connecting to Snowflake
-cask "snowflake-snowsql"
+# Utilise mouse side navigation buttons
+cask "sensiblesidebuttons"
 # Music streaming service
 cask "spotify"
 # Text editor for code, markup and prose
@@ -343,19 +278,24 @@ cask "sublime-text"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin"
 # JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@11"
-# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@25"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@8"
-# Management tool for Unity
-cask "unity-hub"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
+# Create, manage, and run virtual machines
+cask "vmware-fusion"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "Amphetamine", id: 937984704
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Irvue", id: 1039633667
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "OneDrive", id: 823766827
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
+mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "akamud.vscode-theme-onelight"
 vscode "alefragnani.bookmarks"
@@ -365,6 +305,7 @@ vscode "bazelbuild.vscode-bazel"
 vscode "belfz.search-crates-io"
 vscode "bung87.vscode-gemfile"
 vscode "cameron.vscode-pytest"
+vscode "charliermarsh.ruff"
 vscode "chrischinchilla.vscode-pandoc"
 vscode "codezombiech.gitignore"
 vscode "dawhite.mustache"
@@ -383,6 +324,7 @@ vscode "emmanuelbeziat.vscode-great-icons"
 vscode "esbenp.prettier-vscode"
 vscode "fill-labs.dependi"
 vscode "firefox-devtools.vscode-firefox-debug"
+vscode "fknop.vscode-npm"
 vscode "formulahendry.auto-close-tag"
 vscode "formulahendry.auto-complete-tag"
 vscode "formulahendry.auto-rename-tag"
@@ -390,7 +332,6 @@ vscode "formulahendry.code-runner"
 vscode "formulahendry.dotnet-test-explorer"
 vscode "franneck94.c-cpp-runner"
 vscode "gaborv.flatbuffers"
-vscode "gamunu.vscode-yarn"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.remotehub"
@@ -401,13 +342,10 @@ vscode "googlecloudtools.cloudcode"
 vscode "hashicorp.terraform"
 vscode "humao.rest-client"
 vscode "ibm.output-colorizer"
-vscode "ionide.ionide-fake"
-vscode "ionide.ionide-fsharp"
-vscode "ionide.ionide-paket"
+vscode "interactive-smartlog.interactive-smartlog"
 vscode "james-yu.latex-workshop"
 vscode "jasonnutter.vscode-codeowners"
 vscode "johnpapa.vscode-peacock"
-vscode "koichisasada.vscode-rdbg"
 vscode "krizzdewizz.refactorix"
 vscode "llvm-vs-code-extensions.vscode-clangd"
 vscode "mads-hartmann.bash-ide-vscode"
@@ -420,10 +358,9 @@ vscode "mhutchie.git-graph"
 vscode "mrcrowl.hg"
 vscode "mrmlnc.vscode-less"
 vscode "mrmlnc.vscode-scss"
-vscode "ms-azuretools.azure-dev"
-vscode "ms-azuretools.vscode-azureresourcegroups"
-vscode "ms-azuretools.vscode-azurevirtualmachines"
+vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-cst-e.vscode-devskim"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-python.black-formatter"
@@ -432,6 +369,7 @@ vscode "ms-python.flake8"
 vscode "ms-python.isort"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
@@ -454,25 +392,23 @@ vscode "ms-vscode.remote-server"
 vscode "ms-vscode.theme-tomorrowkit"
 vscode "ms-vscode.wordcount"
 vscode "ms-vsliveshare.vsliveshare"
+vscode "ms-vsliveshare.vsliveshare-pack"
 vscode "nvarner.typst-lsp"
 vscode "orta.vscode-jest"
 vscode "pflannery.vscode-versionlens"
 vscode "pkief.material-icon-theme"
 vscode "redhat.java"
-vscode "reditorsupport.r"
-vscode "reditorsupport.r-syntax"
 vscode "rogalmic.bash-debug"
 vscode "rust-lang.rust-analyzer"
 vscode "searking.preview-vscode"
 vscode "shakram02.bash-beautify"
-vscode "shopify.ruby-extensions-pack"
 vscode "shopify.ruby-lsp"
 vscode "sleistner.vscode-fileutils"
-vscode "sorbet.sorbet-vscode-extension"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "stylelint.vscode-stylelint"
 vscode "tamasfe.even-better-toml"
 vscode "techer.open-in-browser"
+vscode "tintoy.msbuild-project-tools"
 vscode "tomoki1207.pdf"
 vscode "tootone.org-mode"
 vscode "twxs.cmake"
