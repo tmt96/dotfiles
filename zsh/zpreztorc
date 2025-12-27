@@ -20,12 +20,13 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'completion' \
+  'git'\
   'emacs'\
   'osx' \
   'tmux'\
+  'completion' \
   'git' \
-  'node' \
+  'python' \
   'syntax-highlighting' \
   'autosuggestions' \
   'prompt'

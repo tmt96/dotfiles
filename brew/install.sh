@@ -31,4 +31,4 @@ echo "Linking your Brewfile..."
 backup_and_link $dir_name/Brewfile ${HOME}/Brewfile
 
 echo "Done installing apps from Homebrew!!"
-echo
+echo ""

@@ -4,8 +4,6 @@
    * Main editor settings
    ***********************************************/
   "breadcrumbs.enabled": true,
-  "debug.console.fontSize": 14,
-  "debug.console.lineHeight": 25,
   "debug.toolBarLocation": "docked",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
@@ -15,9 +13,7 @@
   "editor.formatOnSave": true,
   "editor.suggestSelection": "first",
   "explorer.openEditors.visible": 1,
-  "editor.fontSize": 14,
   "editor.insertSpaces": true,
-  "editor.lineHeight": 25,
   "editor.minimap.enabled": false,
   "editor.tabCompletion": "on",
   "editor.wordWrap": "bounded",
@@ -38,8 +34,7 @@
   },
   "search.showLineNumbers": true,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.lineHeight": 1.4,
   "terminal.integrated.shell.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -103,7 +98,6 @@
   ],
   "auto-close-tag.SublimeText3Mode": true,
   "azureResourceGroups.groupBy": "resourceGroup",
-  "csharp.referencesCodeLens.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,
   "cSpell.enabledLanguageIds": [
     "json",
@@ -403,6 +397,58 @@
       "env": {}
     }
   ],
+  "git.openRepositoryInParentFolders": "always",
+  "redhat.telemetry.enabled": true,
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "latexmk (latexmkrc)",
+      "tools": ["latexmk_rconly"]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["lualatexmk"]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": ["xelatexmk"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex * 2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "pdflatex -> biber -> pdflatex * 2",
+      "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "Compile Rnw files",
+      "tools": ["rnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": ["jnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Pnw files",
+      "tools": ["pnw2tex", "latexmk"]
+    },
+    {
+      "name": "tectonic",
+      "tools": ["tectonic"]
+    }
+  ],
+  "python.analysis.autoImportCompletions": true,
+  "gitHistory.sideBySide": true,
+  "markdown.preview.fontSize": 12,
+  "preview.preview.fontSize": 12,
+  "editor.lineHeight": 1.4,
+  "debug.console.lineHeight": 1.4,
   "terminal.integrated.env.osx": {
     "CW_NEW_SESSION": "1",
     "Q_NEW_SESSION": "1"
@@ -416,7 +462,6 @@
   "rust-analyzer.inlayHints.closureStyle": "rust_analyzer",
   "editor.inlayHints.padding": true,
   "editor.inlayHints.fontSize": 10,
-  "geminicodeassist.project": "studious-highway-tj651",
   "diffEditor.codeLens": true,
   "geminicodeassist.codeGenerationPaneViewEnabled": true,
   "github.copilot.chat.scopeSelection": true,

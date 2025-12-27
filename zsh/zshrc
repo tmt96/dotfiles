@@ -23,9 +23,8 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # init jenv
-export PATH="$HOME/.jenv/bin:$PATH"
+# export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init - --no-rehash)"
-
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete() {
     local completions=("$(dotnet complete "$words")")
@@ -33,7 +32,6 @@ _dotnet_zsh_complete() {
 }
 compctl -K _dotnet_zsh_complete dotnet
 
-source $HOMEBREW_PREFIX/Caskroom/miniconda/base/etc/profile.d/conda.sh
 
 # init thefuck
 [[ -f ~/.fuck.zsh ]] && source "${HOME}/.fuck.zsh"
