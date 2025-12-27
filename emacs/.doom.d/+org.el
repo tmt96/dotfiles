@@ -151,7 +151,15 @@
    `((?A . ,(propertize "⚑" 'face 'error))
      (?B . ,(propertize "⬆" 'face 'warning))
      (?C . ,(propertize "■" 'face 'success))))
+  (org-modern-hide-stars nil)
+  (org-modern-star 'replace)
   :custom-face (org-modern-label ((t :inherit default :height 1.0)))
+  )
+
+(use-package! org-modern-indent
+  :when (modulep! :lang org +modern)
+  :config ; add late to hook
+  (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
   )
 
 ;; notification

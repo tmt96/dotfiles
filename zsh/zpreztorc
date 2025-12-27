@@ -26,7 +26,6 @@ zstyle ':prezto:load' pmodule \
   'tmux'\
   'git' \
   'node' \
-  'python'\
   'syntax-highlighting' \
   'autosuggestions' \
   'prompt'

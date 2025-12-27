@@ -64,6 +64,7 @@
   )
 (when (modulep! :lang org +modern)
   (package! org-modern)
+  (package! org-modern-indent :recipe (:host github :repo "jdtsmith/org-modern-indent"))
   )
 
 ;; ui fixes

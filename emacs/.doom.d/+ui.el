@@ -2,7 +2,8 @@
 
 ;; I like my scrollbar. Fight me!
 (scroll-bar-mode)
-
+;; Title bar in emacs-mac is too big. Workaround
+(add-hook 'doom-after-init-hook (lambda () (tool-bar-mode 1) (tool-bar-mode 0)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
