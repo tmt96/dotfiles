@@ -1,14 +1,7 @@
-tap "d12frosted/emacs-plus"
-tap "heroku/brew"
-tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jimeh/emacs-builds"
-tap "mistertea/et"
 tap "nodenv/nodenv"
-tap "oven-sh/bun"
-tap "railwaycat/emacsmacport"
 tap "sst/tap"
-tap "withgraphite/tap"
 # New file format for still image compression
 brew "jpeg-xl"
 # Codec library for encoding and decoding AV1 video streams
@@ -139,6 +132,8 @@ brew "rbenv"
 brew "rbenv-default-gems"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Safe, concurrent, practical language
 brew "rust"
 # Source control client
@@ -173,8 +168,6 @@ brew "nodenv/nodenv/nodenv-package-rehash"
 brew "nodenv/nodenv/nodenv-update"
 # The AI coding agent built for the terminal.
 brew "sst/tap/opencode"
-# Allows you to manage your stacked changes and submit them for review on GitHub
-brew "withgraphite/tap/graphite"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -277,8 +270,6 @@ cask "spotify"
 cask "sublime-text"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@25"
 # Open-source code editor
 cask "visual-studio-code"
 # Create, manage, and run virtual machines
